@@ -32,7 +32,7 @@ sayColor.call(window); // red this == window
 sayColor.call(o); //green this == o
 ```
 
-*if no parament gived,the default this will be global*
+*if no parament was gived,the default this will be global*
 
 + bind : return a function which is same as original but the value of this is changed to parament.e.g:
 
