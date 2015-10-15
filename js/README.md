@@ -29,3 +29,5 @@
 + 2015-09-16:[this](2015-09-16-this-in-js.md)
 + 2015-10-10:[对象转化为字符串或者数值的过程](2015-10-10-how-object-convert-to-string-and-number.md)
 + 2015-10-11:[delete操作符](2015-10-11-delete-operator.md)
++ 2015-10-12:[JSLint选项](2015-10-14-jslint-options.md)
++ 2015-10-15:[单体模式|迭代器模式](2015-10-15-singleton.md)
