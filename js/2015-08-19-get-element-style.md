@@ -12,11 +12,11 @@ var width = computedStyle.width;
 
 but IE don't support this method, but not too bad, every element in IE has a property named currentStyle,we can get all the style attribute by elem.currentStyle.
 
-new we can write a function help us get style easily.
+now we can write a function help us get style easily.
 
-```
+```javascript
 function getStyle(elem,styleName){
-	var style ;
+	var style;
 	if(window.getComputedStyle){
 		style = getComputedStyle(elem,null);
 	}else{
