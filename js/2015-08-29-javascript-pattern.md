@@ -93,7 +93,7 @@ var pubsub = {};
 		return token;
 	}
 
-	q.unsubcribe = function(token){
+	q.unsubcribe = function(topics,token){
 		for(var m in  topics){
 			for(var i=0,j=topics[m].length;i<j;i++){
 				if(topics[m].token = token){
@@ -115,7 +115,7 @@ var testSubscripion = pubsub.subscriber('example',handler);
 
 pubsub.publish('example','test');
 
-pubsub.unsubcribe(testSubscripion);
+pubsub.unsubcribe('example',testSubscripion);
 
 pubsub.publish('example','test');
 ```
