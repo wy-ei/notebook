@@ -2,9 +2,9 @@
 
 在这里记录我平时学习总结的知识点。
 
-+ [js](./js)
-+ [c/c++](./cpp)
-+ [css](./css)
++ [JavaScript](./js)
++ [C/C++](./cpp)
++ [CSS](./css)
 + [jQuery](./jq)
-+ [linux 工具](./linux)
++ [工具](./tools)
 + [HTTP](./http)
