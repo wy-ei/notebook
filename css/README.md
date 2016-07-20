@@ -1,1 +1,1 @@
-2015-12-19：[为什么是 LVHA](2015-12-19-why-love-hate.md)
++ [为什么是 Love Hate](2015-12-19-why-love-hate.md)
