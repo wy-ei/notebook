@@ -183,6 +183,6 @@ CSS3 中对伪元素进行了调整，使用双冒号开头 `::` ，目的是为
 + `::first-letter`：用来选择文本块的第一个字母，对于行内元素该选择器不起作用，需要修改 `display` 使其成为块状结构才有效
 + `::first-line`：用来匹配文本块的第一行文本
 + `::selection`：用来匹配被选中的文本，该伪元素仅接受 `background` 和 `color` 两个属性
-```
+
 
 更多伪元素可以参见这里 [Pseudo-elements | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/pseudo-elements)
