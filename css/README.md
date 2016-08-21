@@ -4,7 +4,7 @@
 + [CSS 动画](2015-08-23-animation.md)
 + [CSS 边框](2015-06-23-border.md)
 + [CSS 背景](2015-06-24-background.md)
-+ [CSS 文本](2015-06-25-font.md)
++ [CSS 文本](2015-06-25-text.md)
 + [CSS 渐变](2016-08-19-gradient.md)
 + [CSS 形变](2016-08-20-transform.md)
 + [CSS 过渡](2016-08-20-transition.md)
