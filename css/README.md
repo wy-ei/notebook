@@ -7,5 +7,5 @@
 + [CSS 文本](2015-06-25-font.md)
 + [CSS 渐变](2016-08-19-gradient.md)
 + [CSS 形变](2016-08-20-transform.md)
-+ [CSS 媒体类型](2015-08-22-media-type.md)
 + [CSS 过渡](2016-08-20-transition.md)
++ [响应式布局](2015-08-22-responsive.md)
