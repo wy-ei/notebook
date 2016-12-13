@@ -1,4 +1,10 @@
-### 获得元素的位置和元素的尺寸
+---
+layout: post
+title: 获得元素的位置和元素的尺寸
+category: js
+---
+
+## 获得元素的位置和元素的尺寸
 
 对于现代浏览器，可以调用任何 DOM 元素的 `getBoundingClientRect` 方法来获得元素相对于文档的位置。该方法返回一个对象，该对象包含下面一些属性：
 
@@ -24,9 +30,9 @@
 
 综上，为了得到元素的位置和大小可以使用下面的方法：
 
-```
+```js
 function getElementPositionAndSize(ele){
-	var ret = null;
+	var ret = {};
 	if(ele.getBoundingClientRect){
 		ret = ele.getBoundingClientRect();
 		if( !('width' in ret) ){
@@ -38,7 +44,7 @@ function getElementPositionAndSize(ele){
 		ret.height = ele.offsetHeight;
 		ret.left = 0;
 		ret.top = 0;
-		while(ret !== null){
+		while(ele !== null){
 			ret.left += ele.offsetLeft;
 			ret.top += ele.offsetTop;
 			ele = ele.offsetParent;

@@ -1,3 +1,10 @@
+---
+layout: post
+title: 查询元素的样式
+category: js
+---
+
+
 ## how to get a certain style of a element?
 
 if you want get width attribution of a elem,you can't get it by `var width = elem.style.width` ,because style object only containe the attribution which seted by `elem.style.someAttr = value`.
@@ -25,4 +32,3 @@ function getStyle(elem,styleName){
 	return style[styleName];
 }
 ```
-

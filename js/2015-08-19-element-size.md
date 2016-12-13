@@ -1,6 +1,11 @@
-## 查询元素的几何尺寸
+---
+layout: post
+title: 查询元素的几何尺寸
+category: js
+---
 
-### getBoundingClientRect 
+
+### getBoundingClientRect
 
 这个方法直接在元素上面调用，返回一个有left,right,top,bottom 四个属性的对象，(left,top) 为左上角坐标，(right,bottom) 为右下角坐标。这里得到的是相对于视口的坐标，如果希望得到相对于文档的坐标那么就需要加上 offsetLeft，和offsetTop ,这里得到的值是不包含外边距的，也就是说包含内容，内边距，和边框。
 
@@ -49,4 +54,3 @@ window 的 scroll 和 scrollTo 都接收一个坐标，然后让这个坐标尽�
 + scrollHeight:
 + scrollLeft: 滚动条的位置，这个属性是可以写的，改变这个值导致滚动条滚动。
 + scrollTop:
-

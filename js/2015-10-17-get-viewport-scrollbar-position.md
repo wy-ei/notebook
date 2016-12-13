@@ -1,4 +1,9 @@
-## 获取浏览器滚动条的位置
+---
+layout: post
+title: 获取浏览器滚动条的位置
+category: js
+---
+
 
 我们时常需要获取浏览器的水平和竖直方向的滚动位置。
 
@@ -32,4 +37,3 @@ function getScrollOffsets() {
     };
 }
 ```
-

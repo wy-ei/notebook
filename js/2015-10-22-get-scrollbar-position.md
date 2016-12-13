@@ -1,3 +1,10 @@
+---
+layout: post
+title: 获得窗口滚动条位置
+category: js
+---
+
+
 ## 获得窗口滚动条位置
 
 在现代浏览器中均可以从 `window` 对象的 `pageXOffset` 和 `pageYOffset` 属性中得到窗口滚动条的位置。

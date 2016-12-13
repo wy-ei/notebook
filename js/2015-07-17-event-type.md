@@ -1,3 +1,9 @@
+---
+layout: post
+title: JavaScript 事件类型
+category: js
+---
+
 ## UI event
 
 + load:window,img,script,link...
@@ -84,5 +90,3 @@ you can know the text's source form event.inputMethod in **IE**.other browser do
 
 
 ## DOMContentLoaded
-
-

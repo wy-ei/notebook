@@ -1,3 +1,9 @@
+---
+layout: post
+title: 拖拽事件
+category: js
+---
+
 ## 拖拽事件
 
 有关拖拽的事件有：`dragstart`,`drag`,`dragover`,`dragenter`,`dragleave`,`drop`,`dragend`。关于它们的作用，下面会一一讲解。
@@ -17,7 +23,7 @@
 var $source = $('#source');
 $source.on('dragstart',function(event){
 	event = event.originalEvent;
-	
+
 	event.dataTransfer.effectAllowed = 'move';
 	event.dataTransfer.setData('text/plain',$(this).text());
 });
@@ -29,7 +35,7 @@ $source.on('dragstart',function(event){
 
 ### 拖拽
 
-在拖拽的过程中会不断触发 `drag` 事件。 
+在拖拽的过程中会不断触发 `drag` 事件。
 
 ### 自定义放置目标
 
@@ -90,7 +96,7 @@ $target.on('drop',function(event){
 
 ```javascript
 $source.on('dragstart',function(event){
-	event = event.originalEvent;	
+	event = event.originalEvent;
 	event.dataTransfer.effectAllowed = 'move';
 	event.dataTransfer.setData('text/plain',$(this).text());
 });

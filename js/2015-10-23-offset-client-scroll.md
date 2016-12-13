@@ -1,3 +1,11 @@
+---
+layout: post
+title: offset*，client* 和 scroll* 属性
+category: js
+---
+
+
+
 ## 元素的 offset* ，client* 和 scroll* 属性
 
 每个元素都用下面三组属性：
@@ -69,7 +77,3 @@
 获得元素的宽高，这里包含了不可见的部分。如下图所示：
 
 ![scroll](images/scroll.jpg)
-
-
-
-

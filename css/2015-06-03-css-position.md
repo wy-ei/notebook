@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CSS 定位
-category: computer
+category: css
 ---
 
 ## 定位方式
@@ -64,12 +64,6 @@ div.box2{
 
 绝对定位元素当然也会覆盖页面上的其他元素，这个时候可以设置 z-index 属性来决定他们的层叠关系。
 
-### fixed 
+### fixed
 
 fixed 和 absolute 的唯一不同点在于它是相对于浏览器窗口定位的，平时在网页中看到那些固定不动的元素就是通过设置定位方式为 fixed 来实现的。
-
-
-
-
-
-

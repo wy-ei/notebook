@@ -1,3 +1,11 @@
+---
+layout: post
+title:  web workers
+category: js
+---
+
+
+
 ## web workers
 
 我们知道 JavaScript 是单线程的，当需要处理复杂计算的时候，比如大量数据的排序操作，这个时候就会阻塞，出现画面卡顿的现象，这个时候就需要使用web worker来在后台进行数据的计算然后将结果返还回来，这样主线程就不会因为大量计算而出现卡顿现象。
@@ -45,5 +53,3 @@ worker.onerror = function(event){
 	console.log("ERROR: " + event.filename + " (" + event.lineno + "): " +event.message);
 };			
 ```
-
-
