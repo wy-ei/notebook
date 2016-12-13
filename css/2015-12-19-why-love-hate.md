@@ -1,3 +1,9 @@
+---
+layout: post
+title: why Love Hate
+category: css
+---
+
 ## why Love Hate
 
 在介绍伪类选择器的时候，我们知道对于链接常常要使用下面这几个伪类选择器：`:link :visited :hover :active` ，而且还会知道这四个伪类选择器需要按照次序来运用才行，为了记住这个次序人们就想出了 `LoVe HAte`这个词组。

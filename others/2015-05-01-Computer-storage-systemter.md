@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 趣说计算机存储体系
+title: 计算机存储体系
 category: computer
 tag: 理解计算机
 ---

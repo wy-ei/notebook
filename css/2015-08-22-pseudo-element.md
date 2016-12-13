@@ -1,3 +1,9 @@
+---
+layout: post
+title: 伪元素
+category: css
+---
+
 ## 伪元素
 
 + ::first-line --> 匹配元素的第一行文本
@@ -17,7 +23,7 @@
 + E[attr]:选择具有该属性的元素，如img[alt] 选择设置了 alt 的 img 元素，也可以写成 `[type]` 选择所有具有 type 属性的元素。
 + E[attr=val]:选择属性值等于val的元素，如`input[type=text]` 选择所以输入类型为 text 的 input 元素
 + E[attr|=val]:选择属性开头单词等于 val 的元素
-+ E[attr*=val]:选择属性中含有 val 的元素,如`a[href*=github]` 选择所有url中含有 github 的 a 元素 
++ E[attr*=val]:选择属性中含有 val 的元素,如`a[href*=github]` 选择所有url中含有 github 的 a 元素
 + E[attr~=val]:选择属性列表中含有 val 的元素，比如class属性，其中可能含有好几个类名，`div[class~=content]` 会匹配 `<div class='content side'>...</div>`
 + E[attr^=val]:选择属性开头是 val 的元素
 + E[attr$=val]:选择属性以 val 结尾的元素
@@ -32,8 +38,7 @@
 
 // 这里只有后者匹配，前者不会匹配。
 
-// 但是,如果把 alt 改为 alt='css-pseudo' 那么后者就也可以匹配了，注意前面提到的 E[attr|=val] 要求开头单词匹配。 
+// 但是,如果把 alt 改为 alt='css-pseudo' 那么后者就也可以匹配了，注意前面提到的 E[attr|=val] 要求开头单词匹配。
 ```
 
 除了IE7及以下浏览器不支持，其他主流浏览器都支持属性选择器。
-

@@ -1,3 +1,9 @@
+---
+layout: post
+title: CSS animation
+category: css
+---
+
 ## CSS animation
 
 transition 仅仅是让元素在初始状态和结束状态之间进行过渡，虽然也是动画，但功能还是很局限，animation 引入关键帧来描述动画，并提供了更多的属性来控制动画，来看看如何使用 animation 吧。

@@ -1,3 +1,9 @@
+---
+layout: post
+title: CSS transition
+category: css
+---
+
 ## CSS transition
 
 transition 用于将元素从一种状态平滑地过渡到另外一种状态。基本语法如下：

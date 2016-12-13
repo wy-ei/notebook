@@ -1,3 +1,8 @@
+---
+layout: post
+title: 宏
+category: CS
+---
 
 ## 1.预定义符号
 
