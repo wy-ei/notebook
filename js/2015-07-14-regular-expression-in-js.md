@@ -22,7 +22,7 @@ var pattern = new RegExp('h...o','g');
 正则表达式有三个选项
 
 1. i  ---- ingnoreCase
-2. g ---- globel 
+2. g ---- globel
 3. m --- mutilline
 
 
@@ -73,11 +73,13 @@ console.log(match[2]); // undefined
 
 x(?=y) 当我们只想要匹配后面跟着一个y的x的时候，可以使用x(?=y)
 
+```javascript
 var str = "hello boy,hello girl";
 var pattern = /hello(?=\sgirl)/;
 match = pattern.exec(str);
 console.log(match[0]);  // hello
 console.log(match.index);  // 10
+```
 
 这里我们只匹配了后面跟着girl的的hello
 
@@ -101,7 +103,7 @@ console.log(str1.match(pattern1));
 ```javascript
 var str2 = 'la-la';
 var pattern2 = /\b-\b/;
-console.log(pattern2.exec(str2)[0]);  // - 
+console.log(pattern2.exec(str2)[0]);  // -
 ```
 
 这里会匹配 `-` 因为 `-` 的前后是单词的开始和结尾，与 `\b` 匹配
@@ -132,6 +134,6 @@ console.log(match[0]);  // over
 
 + \b : 匹配单词边界
 + (?=a) : 后面紧跟字母 a  
-+ (?!abc ): 负向先行断言，表示后面不跟abc 
++ (?!abc ): 负向先行断言，表示后面不跟abc
 + \b :  匹配单词开始或者结尾的空字符串
 + \B : 匹配非单词边界
