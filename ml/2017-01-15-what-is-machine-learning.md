@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 什么是机器学习
 category: ml
 ---
