@@ -1,10 +1,26 @@
 ## Notebook
 
-## 学习算法
+我的笔记本，记录平时所学的编程相关的知识。
+
+## 分类
+
+- [学习算法](#学习算法)
+- [理解计算机](#理解计算机)
+- [CSS 笔记](#CSS-笔记)
+- [Web 前端](#Web-前端)
+- [JavaScript 笔记](#JavaScript-笔记)
+- [学习数学](#学习数学)
+- [Machine Learning 学习笔记](#Machine-Learning-学习笔记)
+- [网络相关](#网络相关)
+- [其他](#其他)
+- [工具](#工具)
+- [Web](#Web)
+
+### 学习算法
 
 - [非递归求幂](./algorithm/2015-03-01-pow-no-recurtion.md)
 
-## 理解计算机
+### 理解计算机
 
 - [计算机中数值的表示](./cs/2015-02-10-data-representation.md)
 - [虚拟存储器简述](./cs/2015-03-08-virtual-memory.md)
@@ -12,7 +28,7 @@
 - [使用加法器完成减法](./cs/2016-05-19-use-summator-do-subtraction.md)
 - [设计模式](./cs/2017-01-22-design-pattern.md)
 
-## CSS 笔记
+### CSS 笔记
 
 - [CSS 定位](./css/2015-06-03-css-position.md)
 - [CSS border](./css/2015-06-23-border.md)
@@ -35,7 +51,7 @@
 - [CSS 揭秘 - 读书笔记（其五）](./css/2016-09-04-css-secrets-05.md)
 - [CSS 垂直居中](./css/2016-09-08-center-your-element-in-css.md)
 
-## Web 前端
+### Web 前端
 
 - [React 参考手册](./frontend/2016-08-25-react-guide.md)
 - [webpack 插件 —— babel-loader](./frontend/2016-09-20-babel-loader.md)
@@ -52,7 +68,7 @@
 - [前端测试框架 Mocha 用法](./frontend/2017-02-07-mocha-usage.md)
 - [HTML 标签语义](./frontend/2017-02-18-html-element.md)
 
-## JavaScript 笔记
+### JavaScript 笔记
 
 - [JavaScript 中的继承](./javascript/2015-03-11-inherits-in-javascript.md)
 - [JavaScript 中 window 对象](./javascript/2015-04-21-js-window.md)
@@ -82,37 +98,37 @@
 - [Fetch API](./javascript/2016-07-21-fetch-API.md)
 - [debounce & throttle](./javascript/2016-09-18-debounce-and-throttle.md)
 
-## 学习数学
+### 学习数学
 
 - [矩阵乘法和逆矩阵](./math/2017-01-29-matrices-multiply-and-inverse.md)
 
-## Machine Learning 学习笔记
+### Machine Learning 学习笔记
 
 - [什么是机器学习](./ml/2017-01-15-what-is-machine-learning.md)
 - [线性回归](./ml/2017-01-18-linear-regression.md)
 
-## 网络相关
+### 网络相关
 
 - [HTTP Cookie](./net/2015-08-31-http-cookie.md)
 - [HTTP 缓存](./net/2015-09-09-http-cache.md)
 - [HTTP 常见方法语义](./net/2016-04-28-the-semantic-of-http-method.md)
 - [TCP 基础](./net/2016-05-16-tcp-basic.md)
 
-## 其他
+### 其他
 
 - [C字符串库函数实现](./others/2014-10-23-cstring-function.md)
 - [前端学习资源](./others/2014-12-01-software-resource.md)
 - [优先级与链接属性，详解 static 与 extern 关键字](./others/2015-2-25-extern-and-static.md)
 - [C语言中变量的存储类型与初始化](./others/2015-2-26-store-type.md)
 
-## 工具
+### 工具
 
 - [Git 操作技巧](./tools/2016-11-07-git-trick.md)
 - [常用的 Shell 命令（其一）](./tools/2016-11-19-shell-command-1.md)
 - [常用的 Shell 命令（其二）](./tools/2016-12-16-shell-command-2.md)
 - [常用的 Shell 命令（其三）](./tools/2017-01-21-shell-command-3.md)
 
-## Web
+### Web
 
 - [前端知识点](./web/2015-07-11-front-end-collection.md)
 - [《高性能网站建设指南》笔记](./web/2016-04-02-high-performace-web.md)

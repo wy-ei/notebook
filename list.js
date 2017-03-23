@@ -26,36 +26,54 @@ function walkDirectory(dir){
             });
         }
     }
-
-    let directoryReadmeContent = list.map(item => {
-        return `- [${item.title}](${item.relativeLink})`
-    }).join('\n');
-
-    let readmeContent = '';
-    if(readmeFile){
-        readmeContent = fs.readFileSync(readmeFile, 'utf8');
-        readmeContent = readmeContent.split('\n')[0] + '\n\n';
-    }else{
-        readmeFile = path.join(dir, 'README.md');
-        readmeContent = '\n\n';
-    }
-    fs.writeFileSync(readmeFile, readmeContent + directoryReadmeContent);
-    return readmeContent + list.map(item => {
-        return `- [${item.title}](${item.rootLink})`
-    }).join('\n');
+    return {
+        list: list,
+        dir: dir
+    };
 }
 
 function buildReadmeFile(){
-    let indexContent = '## Notebook';
     let files = fs.readdirSync(__dirname);
-    for(let i=0;i<files.length;i++){
-        let file = path.join(__dirname, files[i]);
-        if(fs.statSync(file).isDirectory() && !/^\./.test(files[i])){
-            let content = walkDirectory(file);
-            indexContent += '\n\n' + content;
+
+    let categories = files.filter(file => {
+        return fs.statSync(path.join(__dirname, file)).isDirectory() && !/^\./.test(file);
+    }).map(file => {
+        return walkDirectory(path.join(__dirname, file));
+    }).map(category => {
+        let list = category.list;
+        let readmePath = path.join(category.dir, 'README.md');
+
+        let readmeContent = fs.readFileSync(readmePath, 'utf8');
+
+        let readmeHeader = readmeContent.split('\n').slice(0, 2).join('\n') + '\n';
+        let match = /##\s+(.+)$/gm.exec(readmeHeader);
+        let categoryTitle = '';
+        if(match){
+            categoryTitle = match[1];
         }
-    }
-    fs.writeFileSync(path.join(__dirname, 'README.md'), indexContent);
+        readmeContent = readmeHeader + list.map(item => {
+            return `- [${item.title}](${item.relativeLink})`
+        }).join('\n');
+
+        fs.writeFileSync(readmePath, readmeContent);
+        return {
+            title: categoryTitle,
+            content: `### ${categoryTitle}\n\n` + list.map(item => {
+                return `- [${item.title}](${item.rootLink})`
+            }).join('\n')
+        }
+    });
+
+    let categoryList = '## 分类\n\n' + categories.map(category => {
+        return `- [${category.title}](#${category.title.replace(/\s+/g, '-')})`;
+    }).join('\n') + '\n\n';
+
+    let categoryDetails = categories.map(category => category.content).join('\n\n');
+
+    let titleContent = '## Notebook\n\n我的笔记本，记录平时所学的编程相关的知识。\n\n'
+
+    let rootReadMEContent = titleContent + categoryList + categoryDetails;
+    fs.writeFileSync(path.join(__dirname, 'README.md'), rootReadMEContent);
 }
 
 buildReadmeFile();
