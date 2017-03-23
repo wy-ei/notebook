@@ -41,7 +41,7 @@ function walkDirectory(dir){
     }
     fs.writeFileSync(readmeFile, readmeContent + directoryReadmeContent);
     return readmeContent + list.map(item => {
-        return `- [${item.title}](${item.relativeLink})`
+        return `- [${item.title}](${item.rootLink})`
     }).join('\n');
 }
 
@@ -52,7 +52,7 @@ function buildReadmeFile(){
         let file = path.join(__dirname, files[i]);
         if(fs.statSync(file).isDirectory() && !/^\./.test(files[i])){
             let content = walkDirectory(file);
-            indexContent += '\n\n---\n\n' + content;
+            indexContent += '\n\n' + content;
         }
     }
     fs.writeFileSync(path.join(__dirname, 'README.md'), indexContent);
