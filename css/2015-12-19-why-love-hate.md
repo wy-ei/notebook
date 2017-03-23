@@ -1,7 +1,7 @@
 ---
 layout: post
 title: why Love Hate
-category: css
+category: CSS
 ---
 
 ## why Love Hate

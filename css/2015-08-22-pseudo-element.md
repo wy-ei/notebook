@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 伪元素
-category: css
+category: CSS
 ---
 
 ## 伪元素

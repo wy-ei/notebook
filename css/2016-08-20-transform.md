@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CSS transform
-category: css
+category: CSS
 ---
 
 ## CSS transform

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CSS transition
-category: css
+category: CSS
 ---
 
 ## CSS transition
@@ -31,7 +31,7 @@ div:hover{
 
 对于 time-function， 浏览器内预设了一些，如 ease, linear, ease-in, ease-out, ease-in-out ，可以使用这些预设的过渡函数，也可以使用三次贝塞尔函数或者 steps 函数来自定义过渡函数。
 
-三次贝塞尔函数就不再说了，steps 函数是将过渡过程划分为几个均匀的阶段，其具体语法为 steps(n, [start|end]), 其中 n 决定了整个渐变被分为几个阶段，第二个参数可以是 start 或 end，start 表示阶跃发生在开始阶段，而 end 表示阶跃发生在结束阶段。
+三次贝塞尔函数就不再说了，steps 函数是将过渡过程划分为几个均匀的阶段，其具体语法为 `steps(n, [start|end])`, 其中 n 决定了整个渐变被分为几个阶段，第二个参数可以是 start 或 end，start 表示阶跃发生在开始阶段，而 end 表示阶跃发生在结束阶段。
 
 ```css
 div{

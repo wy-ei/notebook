@@ -2,7 +2,11 @@
 layout: post
 title: C字符串库函数实现
 category: C/C++
+tag: C语言
 ---
+
+* toc
+{:toc}
 
 ### strlen
 
@@ -25,7 +29,7 @@ size_t strlen(char const *string){
 
 
 
-###  strcmp
+### strcmp
 
 **函数原型**:`int strcmp(const char *s1, const char *s2);`
 
@@ -111,7 +115,7 @@ char *strncat(char *dst,const char *src,size_t n){
 	assert(dst!=NULL);
 	if(src==NULL)
 		return dst;
-		
+
 	char *pos=dst;
 	while(*dst!='\0'){   //这里是找到目标操作数的结尾，注意不能写成 while(*sdt++!='\0');  
 	  dst++;            //因为那样循环结束后，dst是指向'\0'后面位置的。
@@ -151,16 +155,16 @@ char *strtok_i(char *string,const char *control){
 	}else{
 		str=string;
 	}
-	
+
 	while(map[*str>>3]&(1<<(*str&7))){   //对于'\0',在map中始终是0。
 		str++;                           //跳过开头的分割符号
 	}
-		
+
 	//--位置1--
 	string=str;         //string作为返回值，指向子字符串
-	
+
 	/*下面需要做的是将下一个分割符设为'\0'*/
-	
+
 	while(*str){
 		if((map[*str>>3]&(1<<(*str&7)))){
 			*str='\0';
@@ -168,14 +172,14 @@ char *strtok_i(char *string,const char *control){
 		}
 		str++;
 	}
-	
+
 	nexttoken=str+1;   //余下的字符串，保存在静态变量里面，便于下次使用
-	
-	
+
+
 	if(*string=='\0'){	//如果*string=='\0',说明后面没有可分割的字符串了。在上面位置1处str已经指向了最后的'\0'
 		return NULL;
 	}else{
-		return string;	
+		return string;
 	}
 }
 
@@ -188,7 +192,7 @@ int main(){
 	p=strtok_i(a,b);        //这个函数会修改原字符串，a字符串中的第一个分隔符被设置为'\0'
 	while(p){
 		printf("%s\n",p);			
-		p=strtok_i(NULL,b); //当采用NULL作为第一个参数的时候，strtok将返回第二个被分割符号分割的字符串	
+		p=strtok_i(NULL,b); //当采用NULL作为第一个参数的时候，strtok将返回第二个被分割符号分割的字符串
 	}					  //所以可以猜想strtok函数里面使用了静态变量存储了之前的字符串
 						  //当所以的子字符串都被处理完后，strtok会返回NULL
 	return 0;
@@ -217,7 +221,7 @@ w
 #include <stdio.h>
 
 int strspn(const char *s,const char *accept){
-	
+
 	unsigned char map[32]={0};
 
 	while(*accept){
@@ -255,7 +259,7 @@ int main(){
 
 至于为什么是`map[*accept>>3]|=(1<<(*accept&7));`。且看下面分析：
 
-由于unsigned char是8位的，所以每个unsigned char可以存放八个字符的状态，所以可以将字符8个一组，分成组来存放在不同的元素里。比如'A'为65，65/8=8余1，所以可以将A是否存在的标志放在map[8]这个元素的第2位上，也就是map[8]|=(1<<1)。
+由于unsigned char是8位的，所以每个unsigned char可以存放八个字符的状态，所以可以将字符8个一组，分成组来存放在不同的元素里。比如'A'为65，65/8=8余1，所以可以将A是否存在的标志放在map[8]这个元素的第2位上，也就是 `map[8]|=(1<<1)`。
 
 而这个8就可以用'A'>>3得到，后面的(1<<1) 也就是(1<<('A'&7))了。
 
@@ -320,7 +324,7 @@ int main(){
 
 char *strchr(char *dst,int c){
 	assert(dst!=NULL);
-	
+
 	while((*dst!=c)&&(*dst!='\0')){
 		dst++;
 	}
@@ -395,7 +399,7 @@ char *strstr_i(const char *str, const char *substr){
 	assert((str!=NULL)&&(substr!=NULL));   //如果为NULL，报错
 
 	const char *p=str;
-	
+
 	size_t len=strlen(substr);   
 
 	for(;(p=strchr(p,*substr))!=NULL;p++){    //用strchr函数找到substr的第一个字符在str中出现的位置
@@ -425,7 +429,7 @@ char *strpbrk(const char *source,const char *chars){
 		map[*chars>>3]|=(1<<(*chars&7));
 		chars++;
 	}
-	
+
 	while(*source){
 		if(map[*source>>3]&(1<<(*source&7))){
 			return (char*)source;
@@ -436,6 +440,3 @@ char *strpbrk(const char *source,const char *chars){
 }
 
 ```
-
-
-

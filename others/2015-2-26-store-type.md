@@ -1,7 +1,7 @@
 ---
 layout: post
 title: C语言中变量的存储类型与初始化
-category: CS
+category: C/C++
 tag: C语言
 ---
 
@@ -48,6 +48,3 @@ int a;
 a=10;
 ```
 最后，如果没有对自动变量进行显式的赋值，那么它的值将是不确定的。
-
-
-

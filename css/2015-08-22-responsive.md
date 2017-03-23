@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 响应式布局
-category: css
+category: CSS
 ---
 
 ## 响应式布局
