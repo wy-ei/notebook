@@ -97,7 +97,7 @@ Press tab to list possible options.
 
 完成交互式问题后，会生成 karma 的配置文件：
 
-```js
+```javascript
 module.exports = function(config) {
   config.set({
 
