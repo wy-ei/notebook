@@ -1,0 +1,14 @@
+script:
+- git clone https://github.com/wy-ei/wy-ei.github.io.git --depth 1
+- cd wy-ei.github.io
+- cd _post
+- git pull origin master
+- cd ..
+- git add .
+- git commit -m "update"
+- git push --quiet "https://${GH_TOKEN}@${GH_REF}" master
+
+env:
+  global:
+    GH_REF: github.com/wy-ei/wy-ei.github.io
+    secure: gKt2i6PTcLPQzLyES4GEnS5/lhC0xAw2XaFgucAb8rOywrZDxW5Xko8w8tFnWpSgk7s/WYwNEQI0NshrJNGdj/zs2+qpGk78wG7ynKeoZ560C21es/h5bwfvPvRSngq2v7N51Op5odlZB6W1IZoTisz2p83Oi4+Y8yVAGnJXwND7nqJ1hsabu6/nIVMQUuUil7VSxrgZfWEns1CXMGbdHrY5UdRvMNm0tmSnHR/y5iHrtGqjxr9T/J/CD3g1fAucF1LwiYjAjaAeQUpW/OCWpqAGOdww5ZFmu3iCd4kIYyKcSyjArKrewbX0ATzMpFVV1hedS/V0wp3KIFN5kmdX6qWllWqHgKSzDF22/rtVjutvD1U9jLzb3BFdNi6uyTuGmH7mmfTgYWZ8tQnw4db/XqF9qFnNBxgb8JQ9dGclXToRN5+fN9BKwwl1f1ZgUWWQ/ZCHXiXDUaJBVGKbxQbezJntzixlfZqU1Tw0OufoqqOP78Xo8V6EZryVPfLoAcYQsWM8oSgQcyDne6mFBo8Fz8GB/z8uJ0htjEGxtxQQ8iKTeouHcRJuYEDfdX6bckKs3KZyso6ajveDRyO1Z2ctpQdYYk0mVvHtJh/Bp5zz/+Le1tcfvOODfBw0yfO2zawgIHcL03c9iF+RFbqWeyVMJ5OyGEI+40CsRNIDEkMap6I=
