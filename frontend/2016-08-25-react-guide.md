@@ -513,3 +513,51 @@ boolean isMounted()
 > 注意：
 
 > 这个方法不能用在 ES6 中通过扩展 `React.Component` 得到的 `class` 组件中。在未来它可能从 React 中完全移除，所以你应该[避免使用它](https://facebook.github.io/react/blog/2015/12/16/ismounted-antipattern.html)。
+
+
+## Context
+
+通过 React 的 Context 将数据直接传递给深层的子组件。context 是上层组件传给下层的，使用方法如下：
+
+下层组件：
+
+```js
+const PropTypes = require('prop-types');
+
+class Button extends React.Component {
+  render() {
+    return (
+      <button style={{background: this.context.color}}>
+        {this.props.children}
+      </button>
+    );
+  }
+}
+
+Button.contextTypes = {
+  color: PropTypes.string
+};
+```
+
+上层组件：
+
+```js
+const PropTypes = require('prop-types');
+
+class Message extends React.Component {
+  getChildContext() {
+    return {color: "purple"};
+  }
+  render() {
+    return (
+      {this.props.text} <Button>Delete</Button>
+    );
+  }
+}
+
+Message.childContextTypes = {
+  color: PropTypes.string
+};
+```
+
+上层组件需要提供 `getChildContext` 方法，返回一个对象（context），并且需要定义 `childContextTypes`。这个组件的下层组件，要使用这个 `context` 必须提供 `contextTypes` 这个静态属性。所有提供了 `contextTypes` 静态的子组件能够得到其中指定的 `context` 中的字段，如果没有提供 `contextTypes` 那么 `this.context` 会是一个空对象。

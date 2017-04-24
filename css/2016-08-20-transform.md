@@ -64,24 +64,67 @@ perspective-origin: left top;
 
 ![backface-visibility](https://cloud.githubusercontent.com/assets/7794103/17830710/6927f524-6706-11e6-868f-f61125a330f3.png)
 
+### transform-function
 
-### translate, translateX, translateY, translate3d
+3D 变换的 X,Y,Z 轴如同所示：
+
+![](http://7xj0pq.com1.z0.glb.clouddn.com/17-4-21/58142497-file_1492770011210_12ce8.png)
+
+`transform` 可取值很多，参数如下：
+
+```css
+/* Keyword values */
+transform: none;
+
+/* Function values */
+transform: matrix(1.0, 2.0, 3.0, 4.0, 5.0, 6.0);
+transform: translate(12px, 50%);
+transform: translateX(2em);
+transform: translateY(3in);
+transform: scale(2, 0.5);
+transform: scaleX(2);
+transform: scaleY(0.5);
+transform: rotate(0.5turn);
+transform: skew(30deg, 20deg);
+transform: skewX(30deg);
+transform: skewY(1.07rad);
+transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+transform: translate3d(12px, 50%, 3em);
+transform: translateZ(2px);
+transform: scale3d(2.5, 1.2, 0.3);
+transform: scaleZ(0.3);
+transform: rotate3d(1, 2.0, 3.0, 10deg);
+transform: rotateX(10deg);
+transform: rotateY(10deg);
+transform: rotateZ(10deg);
+transform: perspective(17px);
+
+/* Multiple function values */
+transform: translateX(10px) rotate(10deg) translateY(5px);
+
+/* Global values */
+transform: inherit;
+transform: initial;
+transform: unset;
+```
+
+#### translate, translateX, translateY, translate3d
 
 这几个属性用来移动元素，translate 接受两个参数，分别是 dx 和 dy。translate3d 接受三个参数，分别是 dx, dy 和 dz。translateX, translateY 则仅仅分别接受 dx, dy 作为参数。
 
-### rotate, rotateX, rotateY, rotate3d
+#### rotate, rotateX, rotateY, rotate3d
 
 这几个属性用来旋转元素，参数形式同 translate，单位为 deg （角度）。
 
-### scale, scaleX, scaleY, scale3d
+#### scale, scaleX, scaleY, scale3d
 
 这几个属性用来缩放元素，参数形式同 translate，取值是数值，没有单位。当取值为正，且小于 1 的时候元素在其纬度上缩小，当却只大于 1 的时候元素在其纬度上放大。当取值为负的时候，元素先进行翻转然后再进行缩放。
 
-### skew, skewX, skewY
+#### skew, skewX, skewY
 
 以上三个属性用来倾斜元素。
 
-### matrix
+#### matrix
 
 transform 属性还可以是一个 matrix，具体的语法是 `transform: matrix(a, b, c, d, e, f);`
 
