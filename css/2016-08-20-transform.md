@@ -4,9 +4,10 @@ title: CSS transform
 category: CSS
 ---
 
-## CSS transform
+* toc
+{:toc}
 
-### transform-origin
+## transform-origin
 
 `transform-origin` 属性用来改变元素的变形中心点，默认情况下元素旋转或者缩放等等形变都是以元素的中心为参照点的，该属性可以允许修改这一特性。具体的使用方法如下：
 
@@ -24,7 +25,7 @@ transform-origin: 50% 50%;
 
 ![transform-origin](https://cloud.githubusercontent.com/assets/7794103/17830394/a4c79314-66fc-11e6-8949-817316812e64.png)
 
-### transform-style
+## transform-style
 
 该属性指定元素是在 3D 空间展现或是在 2D 空间展示。一共有两个可选值。
 
@@ -33,7 +34,7 @@ transform-origin: 50% 50%;
 
 ![transform-style](https://cloud.githubusercontent.com/assets/7794103/17830570/db9e5fb2-6701-11e6-9b15-6446889a4dac.png)
 
-### perspective
+## perspective
 
 该属性用于设置观察者距离元素的位置。下图中分别设置 perspective 为 8000px 和 1000px ，两幅图就像是观察者站在 8000px 和 1000px 远处看到的场景一样。
 
@@ -43,7 +44,7 @@ transform-origin: 50% 50%;
 
 该属性还可以设置在子元素上面，当你想突出某个子元素的时候，可以在它上面设置该属性，用来改写默认值（父元素上的 perspective）。
 
-### perspective-origin
+## perspective-origin
 
 该属性用于决定观看着在舞台前方的位置。该属性的默认值为 `center center`，分别表示横轴和纵轴的位置。
 
@@ -58,13 +59,13 @@ perspective-origin: left top;
 perspective-origin: left top;
 ```
 
-### backface-visibility
+## backface-visibility
 
 当元素经过旋转，其背面呈现在视图中的时候，该属性用来决定元素的背面是否可见。该属性有两个可选值：`visible` 和 `hidden`。
 
 ![backface-visibility](https://cloud.githubusercontent.com/assets/7794103/17830710/6927f524-6706-11e6-868f-f61125a330f3.png)
 
-### transform-function
+## transform-function
 
 3D 变换的 X,Y,Z 轴如同所示：
 
@@ -108,23 +109,23 @@ transform: initial;
 transform: unset;
 ```
 
-#### translate, translateX, translateY, translate3d
+### translate, translateX, translateY, translate3d
 
 这几个属性用来移动元素，translate 接受两个参数，分别是 dx 和 dy。translate3d 接受三个参数，分别是 dx, dy 和 dz。translateX, translateY 则仅仅分别接受 dx, dy 作为参数。
 
-#### rotate, rotateX, rotateY, rotate3d
+### rotate, rotateX, rotateY, rotate3d
 
 这几个属性用来旋转元素，参数形式同 translate，单位为 deg （角度）。
 
-#### scale, scaleX, scaleY, scale3d
+### scale, scaleX, scaleY, scale3d
 
 这几个属性用来缩放元素，参数形式同 translate，取值是数值，没有单位。当取值为正，且小于 1 的时候元素在其纬度上缩小，当却只大于 1 的时候元素在其纬度上放大。当取值为负的时候，元素先进行翻转然后再进行缩放。
 
-#### skew, skewX, skewY
+### skew, skewX, skewY
 
 以上三个属性用来倾斜元素。
 
-#### matrix
+### matrix
 
 transform 属性还可以是一个 matrix，具体的语法是 `transform: matrix(a, b, c, d, e, f);`
 
