@@ -7,5 +7,4 @@
 - [GPU 是如何加速网页渲染的](./2016-11-01-how-gpu-speed-up-page-render.md)
 - [避免强制性同步布局](./2016-11-11-avoid-forced-synchonous-layout.md)
 - [响应式设计相关](./2016-12-09-responsive.md)
-- [How To Reach 60FPS（基础篇）](./2016-12-25-how-to-reach-60fps-1.md)
-- [How To Reach 60FPS（技巧篇）](./2016-12-25-how-to-reach-60fps-2.md)
+- [How To Reach 60FPS（基础篇）](./2016-12-25-how-to-reach-60fps.md)

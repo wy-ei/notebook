@@ -9,8 +9,6 @@
 - [CSS 笔记](#CSS-笔记)
 - [Web 前端](#Web-前端)
 - [JavaScript 笔记](#JavaScript-笔记)
-- [学习数学](#学习数学)
-- [Machine Learning 学习笔记](#Machine-Learning-学习笔记)
 - [网络相关](#网络相关)
 - [其他](#其他)
 - [工具](#工具)
@@ -19,6 +17,10 @@
 ### 学习算法
 
 - [非递归求幂](./algorithm/2015-03-01-pow-no-recurtion.md)
+- [排序](./algorithm/2017-01-05-sort.md)
+- [链表相关算法](./algorithm/2017-04-10-link-list.md)
+- [牛顿迭代法求解平方根](./algorithm/2017-06-09-newtons-method.md)
+- [最大子序列](./algorithm/2018-01-10-maximum-contiguous-subsequence.md)
 
 ### 理解计算机
 
@@ -101,15 +103,6 @@
 - [async / await](./javascript/2017-03-29-async-and-await.md)
 - [ES6 Generator](./javascript/2017-03-29-generator.md)
 
-### 学习数学
-
-- [矩阵乘法和逆矩阵](./math/2017-01-29-matrices-multiply-and-inverse.md)
-
-### Machine Learning 学习笔记
-
-- [什么是机器学习](./ml/2017-01-15-what-is-machine-learning.md)
-- [线性回归](./ml/2017-01-18-linear-regression.md)
-
 ### 网络相关
 
 - [HTTP Cookie](./net/2015-08-31-http-cookie.md)
@@ -140,5 +133,4 @@
 - [GPU 是如何加速网页渲染的](./web/2016-11-01-how-gpu-speed-up-page-render.md)
 - [避免强制性同步布局](./web/2016-11-11-avoid-forced-synchonous-layout.md)
 - [响应式设计相关](./web/2016-12-09-responsive.md)
-- [How To Reach 60FPS（基础篇）](./web/2016-12-25-how-to-reach-60fps-1.md)
-- [How To Reach 60FPS（技巧篇）](./web/2016-12-25-how-to-reach-60fps-2.md)
+- [How To Reach 60FPS（基础篇）](./web/2016-12-25-how-to-reach-60fps.md)
