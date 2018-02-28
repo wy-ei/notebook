@@ -5,3 +5,4 @@
 - [链表相关算法](./2017-04-10-link-list.md)
 - [牛顿迭代法求解平方根](./2017-06-09-newtons-method.md)
 - [最大子序列](./2018-01-10-maximum-contiguous-subsequence.md)
+- [红黑树](./2018-01-13-red-black-tree.md)
