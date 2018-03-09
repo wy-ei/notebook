@@ -173,7 +173,7 @@ console.log("This article is Awesome, isn't it?");
 当用户安装以后，通过 `./node_modules/.bin/cli` 执行，会报错，原因是目前 shell 不知道使用什么解释器来执行这些代码，为此需要在脚本上方指定解释器。
 
 ```js
-!usr/bin/env node
+#!usr/bin/env node
 console.log("This article is Awesome, isn't it?");
 ```
 
