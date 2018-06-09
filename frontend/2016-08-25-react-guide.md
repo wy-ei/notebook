@@ -204,6 +204,24 @@ string renderToString(ReactElement element)
 
 这样就可以在代码中通过 `this.div` 引用到这个 div 元素了。
 
+在 react v16 中，可以使用 `React.createRef()`:
+
+
+```javascript
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.div = React.createRef();
+  }
+  render() {
+    return <div ref={this.div} />;
+  }
+}
+```
+
+这样就可以在代码中通过 `this.div.current` 引用到这个 div 元素了。
+
+
 ### ReactDOMServer.renderToStaticMarkup
 
 ```javascript
