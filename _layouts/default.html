@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }}{% endif %} - {{ site.title }}</title>
+    <meta name="author" content="{{ site.author.name }}" />
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+    {% else %}
+    <meta name="description" content="{{ page.content | strip_html |remove:'\n'|trim|truncate:80,'' }}">
+    {% endif %}
+    <meta name="keywords" content="{{ page.tags | join:',' }} ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href={{site.base_url}}/src/stylesheet/style.css" type="text/css" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="msapplication-navbutton-color" content="#f3f3f3">
+    <meta name="theme-color" content="#f3f3f3">
+</head>
+<body>
+    <header class="m-header">
+        <div class="wrap">
+            <div class="site-title">
+                <h1 class="site-name">{{ site.title }}</h1>
+                <h2 class="site-slogan">{{ site.slogan }}</h2>
+            </div>
+            <nav class="site-nav">
+                <ul>
+                    <li><a {% if page.nav == 'home' %}class="active"{% endif %} href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
+                    <li><a {% if page.nav == 'category' %}class="active"{% endif %} href="{{site.base_url}}/categories.html"><i class="fa fa-folder fa-fw"></i>分类</a></li>
+                    <li><a {% if page.nav == 'about' %}class="active"{% endif %} href="{{site.base_url}}/about.html"><i class="fa fa-paper-plane fa-fw"></i>关于</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="m-main">
+        <div class="wrap">
+            {{ content }}
+        </div>
+    </section>
+    {% include footer.html %}
+    <div class="to-top">
+        <i class="fa fa-chevron-up"></i>
+    </div>
+    <script data-main="{{site.base_url}}/src/script/app.js" src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+</body>
+</html>

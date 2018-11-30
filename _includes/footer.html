@@ -1,0 +1,13 @@
+<footer class="m-footer">
+    <div class="wrap">
+        <p class="link">
+            <span>其他链接：</span>
+            {% for link in site.data.link %}
+            <a href="{{ link.url }}">{{ link.name }}</a>
+            {% endfor %}
+        </p>
+        <div class="copyright">
+            <p>&copy; 2017-2018 {{ site.domain }}</p>
+        </div>
+    </div>
+</footer>

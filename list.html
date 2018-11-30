@@ -1,0 +1,22 @@
+---
+layout: page
+title: 列表
+description: 文章列表
+nav: list
+---
+
+
+
+<div class="m-article-list">
+        <p class="article-count">共计 {{ site.posts | size }} 篇博文，继续努力！</p>
+    <ul class="m-list">
+    {% for post in site.posts %}
+        <li class="list-item">
+            <a href="{{ post.url }}">
+                <time class="date">{{ post.date|date:"%Y-%m-%d" }}</time>
+                <p class="item-name"> - {{ post.title }}</p>
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+</div>

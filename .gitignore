@@ -1,4 +1,9 @@
 _site/*
-*.out
+node_modules/*
+.sass-cache
+typings
 .idea
-.vscode
+.vs
+.jekyll-metadata
+.git
+.ipynb_checkpoints

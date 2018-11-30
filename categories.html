@@ -1,0 +1,32 @@
+---
+layout: page
+title: 分类
+nav: category
+description: 文章分类
+---
+
+
+<div class="m-tag-list">
+{% for category in site.categories %}
+  <a href="#{{ category | first }}">{{ category | first }} ({{ category | last | size }})</a>
+{% endfor %}
+</div>
+
+
+<ul class="m-suplist">
+{% for category in site.categories reversed %}
+  <li class="suplist-item">
+      <h3 id="{{ category | first }}" class="suplist-name"><i class="fa fa-folder fa-fw"></i>{{ category | first }}</h3>
+      <ul class="m-list">
+      {% for post in category.last %}
+        <li class="list-item">
+          <a href="{{ post.url }}">
+            <time class="date">{{ post.date|date:"%Y-%m-%d" }}</time>
+            <p class="item-name"> - {{ post.title }}</p>
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
+  </li>
+{% endfor %}
+</ul>

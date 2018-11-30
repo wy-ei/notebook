@@ -1,0 +1,11 @@
+@media print {
+    .m-header,
+    .m-footer,
+    .m-comment,
+    .to-top{
+        display: none;
+    }
+    .m-main{
+        padding: .5rem;
+    }
+}

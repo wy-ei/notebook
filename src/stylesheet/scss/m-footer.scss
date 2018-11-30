@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+.m-footer {
+    color: #333;
+    background-color: #f3f3f3;
+    font-size: .12rem;
+    padding-top: .3rem;
+    border-top: 1px solid #dedede;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    .link{
+        line-height: 1.2em;
+        margin-bottom: .1rem;
+        h2{
+            font-size: .18rem;
+            color: inherit;
+            padding-bottom: .04rem;
+            margin-bottom: .1rem;
+        }
+        a{
+            display: inline-block;
+            margin-right: .2rem;
+        }
+    }
+    a{
+        color: inherit;
+        border-bottom: 1px solid #999;
+        &:hover{
+            color: $active-color;
+        }
+    }
+    .copyright{
+        color: inherit;
+        margin-top: .3rem;
+        padding: .15rem 0;
+    }
+}

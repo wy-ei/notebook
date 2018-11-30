@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+@import 'var';
+
+.m-post {
+    .post-header{
+        padding-bottom: .1rem;
+        border-bottom: 1px solid #ccc;
+        h1{
+            font-size: 1.6em;
+        }
+    }
+    .extra-info{
+        margin-top: .1rem;
+        font-size: .12rem;
+        span{
+            margin-right: .2rem;
+        }
+        a{
+            text-decoration: underline;
+        }
+    }
+    .content {
+        padding-top: .4rem;
+        img {
+            display: block;
+            max-width: 100%;
+            margin: auto;
+            // border: 1px solid #ccc;
+        }
+        .img-alt-wrap {
+            text-align: center;
+            > p {
+                font-style: italic;
+                line-height: 1.5em;
+                display: inline-block;
+                margin: 1em auto;
+                text-indent: 0;
+                border-bottom: 1px solid #d9d9d9;
+            }
+        }
+        #markdown-toc {
+            padding-left: 0;
+            margin: 0;
+            margin-bottom: .3rem;
+            li {
+                list-style-type: decimal;
+                list-style-position: inside;
+            }
+        }
+        #markdown-toc::before {
+            content: '目录:';
+            display: block;
+            font-size: 1.5em;
+            color: #333;
+            border-bottom: 1px dotted #ccc;
+            margin: .5em 0;
+        }
+
+        iframe {
+            display: block;
+            margin: auto;
+            padding-top: 1em;
+            padding-bottom: 2em;
+            border: none;
+        }
+        iframe[src*='music'] {
+            width: 100%;
+        }
+        .emoji {
+            display: inline-block;
+            height: 1.33em;
+            width: 1.33em;
+            border: none;
+            vertical-align: -0.3em;
+            margin: 0 0.1em;
+            overflow: visible;
+        }
+
+        td code,
+        p code{
+            font-family: $code-font-family;
+            font-size: .93em;
+            padding: 2px 4px;
+            border-radius: 3px;
+            color: #c7254e;
+            background-color: #f9f2f4;
+        }
+
+        .MathJax_SVG_Display{
+            overflow: auto;
+            padding: 5px 0;
+            margin-bottom: 1em;
+        }
+        table{
+            width: 100%;
+        }
+    }
+    .post-footer {
+        margin-top: 0.6rem;
+        .last-page,
+        .next-page {
+            display: inline;
+            cursor: pointer;
+        }
+        .next-page {
+            float: right;
+        }
+        a {
+            padding-bottom: 0.03rem;
+            border-bottom: 1px solid #ccc;
+            &:hover {
+                color: $active-color;
+            }
+        }
+
+
+    }
+
+    @media screen and (max-width: 768px) {
+        .post-footer {
+            .last-page,
+            .next-page {
+                display: block;
+                float: none;
+                margin: 10px 0;
+            }
+        }
+    }
+}
+
+.react-component{
+    margin: .1rem 0;
+}
+
+.m-comment {
+    margin: 1rem auto auto;
+}

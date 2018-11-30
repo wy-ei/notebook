@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: FortAwesome;
+    src: url(data:application/font-woff2;charset=utf-8;base64,d09GMgABAAAAAAS0AA0AAAAACbQAAARdAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP0ZGVE0cBmAAgmoIBBEICocwhVkLGgABNgIkAy4EIAWDdQdyG9kHUVROymQfCdXtnZg4D1QMw3IWS1Th1L8RfL+G7vv/7gIIMmlrCVh24qrJd2psVEEYAqGi6qo7g3DDv6e9tE4KD8poZDDaOxeD+HWi/sSrQ+PUarG6FqMIBugurTZr1gQy/sKlFcqPP3VslZ4ewH9Ez0rKT40nQsDK8peTsPLiqT23OSG/jX1K0r30DHeB5eO9NVGQlBmnLDqd6BYfe/KlulRivmTfLQIgNgliy5BtNLxyDV64/5ZgF6Bdo6RCm8mP5ceGjz11DUDo/KJc/6jfdEYn5k8BVoiKTJVIKPxnghJw2Kl0ExB1LYFWMGieMDqBOAiAAgtwgOkkkFcs5KKYfM7jCyiqfCYzDCHSCTEIEW5wEvNgoSA7SyyQClykcjlzIu1oqE2GICIJEC2JwrXOwzAEg2bhIoSHZFAOJmmIEqcWCwUx0rYLlYn4mKS1oVUvax4WGmQv3oWgtmMIIrqjjy18bjsqPNx6RNQwI1/bzxPDqDlKnX0WggoqY2YVB3UbZEhME671NswQZhIS2+4FAbpSzFEWSxCyX0lNJoVpQnGs0yuTQytFC8pxwxlmUR1VaxuSa5PKyYSi3JambNBAztTQllIbKFqSk93DoRjsOKTNm0PoIv1c07p9GKYJeWL+CMIULcmlyqAZ9XHq+Dv0XMo5E/vweAXLMhzZs9NL3EtWWpmlwuVPB8NULVR7y4spA5RCfPY39dmf+iwZTC/m/fv7EKw3MSAQHjA8F+BoVpGctKC8YIBgDdnti6qLE2OLysocqsDaHVX14nK10NX27/dW8VH9qLKo8lHVRyXKWfGIJToNiNMELvgEFy8qPo31o5JKjvif0zOzzCaU1SqcfhMZR36aYCvgOzi0K4spNKC1w7us/P2tljGiMnHbxalH5wTomy2dfEoMO31LAOXIDw17casg7H55WpWcG/x30M1Mm2wY6vjnzgmiDokYgifmH9N6NcnXxvO/cLabIaI+R86Ds6rgziNYKtRf0fJR9LT/CXUSlg1Siy4O/OV6VFt9YObEp5z1IrNvOM8bGPBzvQCAR2Fx3WZD4cOaR1X5jmXkhChiJpYoIljFX5gYvxKE4PG4xs5F5rpvjS35Y3u2z/pXXZq/5kuARgkEbVPS2fwxhs4EQfhoS1ynDhCHgPyRDC2rdPGafAlw1f/dl6P+JdBqCR4khMAmJgBod18AWg3bEFpshKTBWcjmbUChxUcotUb/1pWWWAsviiYMAgCEfrqQtNsL2T6ZUOh3H0qD/p630h8zfJQoVwnlrgamQokiGHAsEXavwYYyO0gyEDMgWx2ByVGlULpy4P142nyEYm3+n5MDg7JgwgzKAVquNnx9G8YsGbNgxpwdcNIXyQ8sz8FQCxMz1AGtHbvSNsaWxuPBMTSWcKJSrkJe42Io8wbZwPx9BsxNzNBinjUB9R1rCOdoRUiRIstRRBlVNERjNBX/Yr4UbusR8o2lPB8zM2udbMsxN6OYUyzMlgAAAA==) format('woff2');
+    font-weight: 400;
+    font-style: normal
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal .14rem/1 FortAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.fa-fw {
+    width: 1.28571429em;
+    text-align: center
+}
+
+
+.fa-home:before {
+    content: '\f005'
+}
+
+.fa-chevron-up:before {
+    content: '\f007'
+}
+
+.fa-tag:before {
+    content: '\f010'
+}
+
+.fa-paper-plane:before {
+    content: '\f011'
+}
+
+.fa-folder:before {
+    content: '\f012'
+}
+
+.fa-book:before {
+    content: '\f013'
+}

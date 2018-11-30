@@ -1,0 +1,16 @@
+image: ruby:2.3
+
+pages:
+  stage: deploy
+  script:
+  - LANG=zh_CN.UTF-8
+  - gem install jekyll
+  - gem install jemoji
+  - git submodule sync --recursive
+  - git submodule update --init --recursive
+  - jekyll build -d public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master

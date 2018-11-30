@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<article class="m-post">
+    <header class="post-header">
+        <h1>{{ page.title }}</h1>
+    </header>
+    {% if page.date %}
+        <div class="extra-info"><span>发表于: {{ page.date|date:"%Y-%m-%d" }}</span><span>分类于：<a href="{{site.base_url}}/categories.html#{{ page.categories}}">{{ page.categories}}</a></span></div>
+    {% endif %}
+    <div class="typo content">
+        {{ content }}
+    </div>
+</article>

@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+.m-article{
+    .article-title{
+        font-size: .2rem;
+        color: #333;
+        margin-bottom: .05rem;
+    }
+    .post-date{
+        font-size: .12rem;
+        color: #999;
+    }
+    .category{
+        font-size: .12rem;
+        margin: .1rem 0;
+    }
+    .excerpt{
+        color: #666;
+        line-height: 2em;
+        margin-bottom: .1rem;
+        &:hover{
+            color: #999;
+        }
+    }
+}

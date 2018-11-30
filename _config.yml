@@ -1,0 +1,27 @@
+encoding: utf-8
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  toc_levels: 2..3
+
+permalink: /:year/:month/:title.html
+
+sass:
+  sass_dir: /src/stylesheet/scss
+  style: compressed
+
+base_url: https://wy-ei.github.io/notebook
+
+images_dir: https://wy-ei.github.io/notebook/images
+
+title: WangYu's Progamming NoteBook
+slogan: 好记性不如烂笔头
+domain: wy-ei.github.io
+
+excerpt_separator: "<!--more-->"
+
+author:
+  name: wangyu
+  email: wangyu_it@yeah.net
+  github: wy-ei
