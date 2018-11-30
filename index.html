@@ -11,7 +11,7 @@ nav: home
     <ul class="m-list">
     {% for post in site.posts %}
         <li class="list-item">
-            <a href="{{ post.url }}">
+            <a href="{{site.base_url}}{{ post.url }}">
                 <time class="date">{{ post.date|date:"%Y-%m-%d" }}</time>
                 <p class="item-name"> - {{ post.title }}</p>
             </a>

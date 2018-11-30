@@ -17,7 +17,7 @@ description: 文章标签
       <ul class="m-list">
       {% for post in tag[1] %}
         <li class="list-item">
-          <a href="{{ post.url }}">
+          <a href="{{site.base_url}}{{ post.url }}">
           <p class="item-name">{{ post.title }}</p>
           <time class="date">{{ post.date|date:"%Y-%m-%d" }}</time>
           </a>
