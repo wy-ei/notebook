@@ -12,8 +12,11 @@ sass:
   style: compressed
 
 base_url: https://wy-ei.github.io/notebook
+# base_url: ''
 
-images_dir: https://wy-ei.github.io/notebook/images
+images: https://wy-ei.github.io/notebook/images
+# images: /images
+
 
 title: WangYu's Notes
 slogan: 好记性不如烂笔头

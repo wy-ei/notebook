@@ -536,7 +536,7 @@ CREATE ASSERTION count_samll_than_100 CHECK
 
 各种约束的比较如下：
 
-![]({{site.images_dir}}/18-3-23/53337733.jpg)
+![]({{site.images}}/18-3-23/53337733.jpg)
 
 
 ## 虚拟视图

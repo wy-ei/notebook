@@ -67,7 +67,7 @@ parseInt: 3661.403ms
 
 谈到这里需要对浏览器利用 HTML/CSS/JavaScript 等资源呈现出精彩的页面的过程进行简单说明。浏览器在收到 HTML 文档之后会对文档进行解析开始构建 DOM (Document Object Model) 树，进而在文档中发现样式表，开始解析 CSS 来构建 CSSOM（CSS Object Model）树，这两者都构建完成后，开始构建渲染树。整个过程如下：
 
-![text=渲染树的构建过程]({{site.images_dir}}/16-9-24/93321516.jpg)
+![text=渲染树的构建过程]({{site.images}}/16-9-24/93321516.jpg)
 
 在每次修改了 DOM 或者其样式之后都要进行 DOM树的构建，CSSOM 的重新计算，进而得到新的渲染树。浏览器会利用新的渲染树对页面进行重排和重绘，以及图层的合并。通常浏览器会批量进行重排和重绘，以提高性能。但当我们试图通过 JavaScript 获取某个节点的尺寸信息的时候，为了获得当前真实的信息，浏览器会立刻进行一次重排。
 
@@ -89,7 +89,7 @@ parseInt: 3661.403ms
 
 每一帧实际上都包含下列步骤：
 
-![]({{site.images_dir}}/16-9-24/92671229.jpg)
+![]({{site.images}}/16-9-24/92671229.jpg)
 
 因此，通常 JavaScript 的执行时间不能超过 10ms。
 
@@ -111,7 +111,7 @@ parseInt: 3661.403ms
 
 可以使用 CSS 中的 `will-change: transform;` 或者 `transform: translateZ(0);` 这样来将元素提升至单独的图层中。
 
-![text=使用 Chrome DevTools 来审查图层]({{site.images_dir}}/16-9-24/49607309.jpg)
+![text=使用 Chrome DevTools 来审查图层]({{site.images}}/16-9-24/49607309.jpg)
 
 在调试的时候你可以在 Chrome DevTools 的 timeline 面板来观察绘制图层。当然也不是说图层越多越好，因为新增加一个图层可能会耗费额外的内存。且新增加一个图层的目的是为了避免某个元素的变动影响其他元素。
 
@@ -127,7 +127,7 @@ parseInt: 3661.403ms
 
 我们希望在每一帧刚开始的时候对页面进行更改，目前只有使用 `requestAnimationFrame` 能够保证这一点。使用 `setTimeout` 或者 `setInterval` 来触发更新页面的函数，该函数可能在一帧的中间或者结束的时间点上调用，进而导致该帧后面需要进行的事情没有完成，引发丢帧。
 
-![text=使用 setTimeout 可能导致丢帧]({{site.images_dir}}/16-9-24/9554789.jpg)
+![text=使用 setTimeout 可能导致丢帧]({{site.images}}/16-9-24/9554789.jpg)
 
 `requestAnimationFrame` 会将任务安排在页面重绘之前，这保证动画能有足够的时间来执行 JavaScript 。
 

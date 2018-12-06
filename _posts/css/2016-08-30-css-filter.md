@@ -195,7 +195,7 @@ window.addEventListener('load', function(){
             max = rect.dataset.max,
             step = rect.dataset.step;
         var img = document.createElement('img');
-        img.src = '{{site.images_dir}}/16-9-3/75491219.jpg';
+        img.src = '{{site.images}}/16-9-3/75491219.jpg';
         rect.appendChild(img);
         var input = document.createElement('input');
         input.type = 'range';

@@ -69,7 +69,7 @@ perspective-origin: left top;
 
 3D 变换的 X,Y,Z 轴如同所示：
 
-![]({{site.images_dir}}/17-4-21/58142497-file_1492770011210_12ce8.png)
+![]({{site.images}}/17-4-21/58142497-file_1492770011210_12ce8.png)
 
 `transform` 可取值很多，参数如下：
 

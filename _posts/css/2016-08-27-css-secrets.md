@@ -208,7 +208,7 @@ tag: CSS
   text-align: center;
   border: 30px solid hsla(0, 0%, 100%, 0.4);
   background: linear-gradient(hsla(0, 0%, 100%, 0.8),hsla(0, 0%, 100%, 0.8)) padding-box,
-      url({{site.images_dir}}/16-8-28/59834519.jpg) border-box 0 / cover;
+      url({{site.images}}/16-8-28/59834519.jpg) border-box 0 / cover;
 }
 .ant{
   padding: 1px;
@@ -235,7 +235,7 @@ tag: CSS
 
 下面是我在看书时候记录的一些笔记，我更推荐你去阅读这本书，当然了下面的内容你也可以简单浏览一下，首先很惭愧地说千万不要因为我笔记的质量而怀疑这本书，这本书很牛，强烈推荐。
 
-![css secrets]({{site.images_dir}}/16-8-28/70809652.jpg)
+![css secrets]({{site.images}}/16-8-28/70809652.jpg)
 
 ## 半透明边框
 
@@ -506,7 +506,7 @@ background-image: linear-gradient(hsla(0, 0%, 100%, 0.8);
 
 ```css
 background-image: linear-gradient(hsla(0, 0%, 100%, 0.8),hsla(0, 0%, 100%, 0.8)),
-    url({{site.images_dir}}/16-8-28/59834519.jpg);
+    url({{site.images}}/16-8-28/59834519.jpg);
 ```
 
 这个时候白色半透明背景会完全覆盖在图片上，使用 background-clip 改变两个背景图片的覆盖区域就 OK 了，如下：
@@ -519,7 +519,7 @@ background-clip: padding-box, border-box;
 
 ```css
 background: linear-gradient(hsla(0, 0%, 100%, 0.8),hsla(0, 0%, 100%, 0.8)) padding-box,
-    url({{site.images_dir}}/16-8-28/59834519.jpg) border-box 0 / cover;
+    url({{site.images}}/16-8-28/59834519.jpg) border-box 0 / cover;
 ```
 
 ### 蚂蚁线
@@ -669,7 +669,7 @@ border-radius: 100% 0 0 0;
 哈哈，想想如何实现下面这样的效果：
 
 <div class="diamond">
-    <img src="{{site.images_dir}}/16-8-28/59834519.jpg">
+    <img src="{{site.images}}/16-8-28/59834519.jpg">
 </div>
 <style>
 .diamond{
@@ -918,7 +918,7 @@ transform: scaleY(2) perspective(50px) rotateX(45deg);
     background-color: #eee;
 }
 .filter{
-    background: url({{site.images_dir}}/16-8-29/3537077.jpg) 0 0 / 100% 100%;
+    background: url({{site.images}}/16-8-29/3537077.jpg) 0 0 / 100% 100%;
     transition: .5s;
     -webkit-filter: sepia(1) saturate(4) hue-rotate(295deg);
     filter: sepia(1) saturate(4) hue-rotate(295deg);
@@ -933,7 +933,7 @@ transform: scaleY(2) perspective(50px) rotateX(45deg);
     height: 100%;
 }
 .background-blend-mode{
-    background: hsl(335, 100%, 50%) url({{site.images_dir}}/16-8-29/3537077.jpg) 0 0 / 100% 100%;
+    background: hsl(335, 100%, 50%) url({{site.images}}/16-8-29/3537077.jpg) 0 0 / 100% 100%;
     background-blend-mode: luminosity;
 }
 .blur-background{
@@ -945,7 +945,7 @@ transform: scaleY(2) perspective(50px) rotateX(45deg);
 }
 .blur-background>img{
     z-index: -1;
-    background: url({{site.images_dir}}/maxresdefault.jpg) 0 / cover;
+    background: url({{site.images}}/maxresdefault.jpg) 0 / cover;
     -webkit-filter: blur(5px);
     filter: blur(5px);
 }
@@ -1062,7 +1062,7 @@ filter: sepia(1) saturate(4) hue-rotate(295deg);
 
 使用 `mix-blend-mode` 的效果：
 
-<div class="mix-blend-mode rect"><img src="{{site.images_dir}}/16-8-29/3537077.jpg"></div>
+<div class="mix-blend-mode rect"><img src="{{site.images}}/16-8-29/3537077.jpg"></div>
 
 使用 `background-blend-mode` 的效果：
 
@@ -1075,7 +1075,7 @@ filter: sepia(1) saturate(4) hue-rotate(295deg);
 
 我们常常看到毛玻璃效果，比如在 macOS 中就非常常见，启动 launchpad 就能看到这种效果。在网易云音乐中显示歌词的哪儿也使用了这种效果。说这么多不如一个例子，就下面这样的。那么在 web 上该如何实现这样的效果呢。
 
-<div class="blur-background"><img src="{{site.images_dir}}/maxresdefault.jpg" alt=""><p>即刻出发</p></div>
+<div class="blur-background"><img src="{{site.images}}/maxresdefault.jpg" alt=""><p>即刻出发</p></div>
 
 这里 dom 结构是这样的：
 
@@ -1099,7 +1099,7 @@ filter: sepia(1) saturate(4) hue-rotate(295deg);
     position: absolute;
     top: 0;right: 0;bottom: 0;left: 0;
     z-index: -1;
-    background: url({{site.images_dir}}/maxresdefault.jpg) 0 / cover;
+    background: url({{site.images}}/maxresdefault.jpg) 0 / cover;
     -webkit-filter: blur(5px);
     filter: blur(5px);
 }

@@ -61,19 +61,19 @@ for(let i = 0,len = divs.length; i<len; i++){
 
 **强制性同步布局：**
 
-![]({{site.images_dir}}/16-11-11/319890.jpg)
+![]({{site.images}}/16-11-11/319890.jpg)
 
 这个时候会看到浏览器进行了很多次的重新计算样式（Recalculate Style） 和 布局（Layout），也叫做 reflow 的操作，且这一帧用时很长。
 
 **分离读写：**
 
-![]({{site.images_dir}}/16-11-11/147743.jpg)
+![]({{site.images}}/16-11-11/147743.jpg)
 
 这个时候，浏览器只进行了一次 reflow，用时很短。
 
 **使用 requestAnimationFrame:**
 
-![]({{site.images_dir}}/16-11-11/625120.jpg)
+![]({{site.images}}/16-11-11/625120.jpg)
 
 这个方案也很快，只是因为调用了 `requestAnimationFrame` 很多次添加了很多回调，这个时候会有很多函数调用。建议对于将该方法用在回调较少的场景下。其实另外一个可行的方案是在 `requestAnimationFrame` 中批量来写 DOM
 元素。

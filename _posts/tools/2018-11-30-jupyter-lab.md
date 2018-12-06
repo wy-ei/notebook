@@ -1,22 +1,30 @@
 ---
 layout: post
-title: Jupyter Lab 配置
+title: 数据科学利器 —— Jupyter Lab
 category: 工具
 ---
 
-## jupyter lab
+本文为我在使用 jupyter lab 时的笔记，会持续更新。
 
-jupyter lab 可以算的上是一个简易的开发环境，不同于 jupyter notebook 一次只能打开一个笔记本，jupyter lab 看起来则像是一个 IDE，在这里面你可以同时打开多个窗口，编辑不同类型的文件。 如果正在使用 jupyter notebook，那么没有理由不切换到 jupyter lab 上。
+- toc
+{:toc}
+
+## 简介
+
+做数据科学的同学对 jupyter notebook 应该很熟悉，但他的一个缺点是不能够同时打开多个文件。jupyter lab 可以算的上是一个简易的 IDE，你可以同时打开多个窗口，打开终端，对窗口进行分割，同时编辑不同类型的文件。 如果正在使用 jupyter notebook，那么没有理由不切换到 jupyter lab 上。
+
+其主界面如下：
+
+![]({{site.images}}/18-12-6/jupyter-lab.jpg)
 
 
-文档 [JupyterLab Documentation](https://jupyterlab.readthedocs.io/en/stable/)。
+jupyter notebook 的文档在 [JupyterLab Documentation](https://jupyterlab.readthedocs.io/en/stable/)。
 
 ## 安装与启动
 
 ```sh
 # 安装
 pip install jupyterlab
-
 
 # 启动 jupyter lab
 jupyter lab
