@@ -2,11 +2,13 @@
 layout: post
 title: Web 安全
 category: Web
-tag: 安全
 ---
 
-* toc
+
+
+- *
 {:toc}
+
 
 ## XSS
 
@@ -40,7 +42,6 @@ XSS （Cross Site Script）为了区别于 CSS ，缩写为 XSS。XSS 是指黑�
 
 - 反射型 XSS
 - 存储型 XSS
-- DOM Base XSS
 
 ### 反射型 XSS
 
@@ -52,21 +53,6 @@ XSS （Cross Site Script）为了区别于 CSS ，缩写为 XSS。XSS 是指黑�
 
 在一些论坛中，允许使用者发布一些帖子，恶意用户可能输入一些破坏性的脚本，然后这些内容被保存到了服务器上，下一个访问该网页的用户会下载这些恶意内容，其中就包含恶意脚本。这样造成的结果是每个访问该页面的用户都遭到了攻击。
 
-### DOM Base XSS
-
-JavaScript 代码并非只能通过 script 标签插入，在 html 标签中也可以通过 onclick，onerror 等属性插入 JavaScript 代码， 对于这类 XSS 攻击称之为 DOM Base XSS。
-
-比如一个 input 标签：
-
-```html
-<input type="text" value="">
-```
-
-当别人输入以下内容的时候，就会将 js 代码插入到了 DOM 上
-
-```
-xss" onclick="javascript:alert('handsome boy')
-```
 
 ## XSS 的防御手段
 
@@ -106,6 +92,7 @@ CSRF (Cross Site Request Forgery)，跨站点请求伪造。
 ## 点击劫持
 
 X-Frame-Options 这个字段是为了防止 ClickJacking 而生的。有以下几个可选值：
+
 - DENY
 - SAMEORIGIN
 - ALLOW-FROM origin
@@ -117,7 +104,7 @@ X-Frame-Options 这个字段是为了防止 ClickJacking 而生的。有以下�
 
 ### iframe
 
-HTML5 中专门为 iframe 定义了一个新属性 - sandbox ,这个属性可以控制 iframe 中加载的资源可以执行的动作。
+HTML5 中专门为 iframe 定义了一个新属性 - sandbox, 这个属性可以控制 iframe 中加载的资源可以执行的动作。
 
 ### a 标签
 

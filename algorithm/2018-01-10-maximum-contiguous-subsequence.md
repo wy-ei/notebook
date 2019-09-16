@@ -38,8 +38,7 @@ int max_sub_sum(const vector<int> &a) {
 ```
 
 
-```c++
-
+```cpp
 int max_sum_rec(const vector<int> &a, int left, int right) {
 	if (left == right) {
 		if (left < 0) {

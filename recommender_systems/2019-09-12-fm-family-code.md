@@ -1,0 +1,16 @@
+---
+layout: post
+title: FM, FFM, DFM, NFM, Wide & Deep 实现
+category: 推荐系统
+tags: ['推荐系统']
+notebook: true
+---
+
+
+<div id="app"></div>
+
+<script>
+    window.wangyu.run(function(){
+        this.render_jupyter_notebook('/notebook/recommender_systems/FM.ipynb', 'app');
+    });
+</script>

@@ -2,11 +2,14 @@
 layout: post
 title: 《高性能网站建设指南》笔记
 category: Web
-tag: 性能优化
 ---
 
-* toc
+
+
+
+- *
 {:toc}
+
 
 黄金法则：只有10%-20%的响应时间是花费在了HTML文档的下载上，其余时间花在了下载页面中的所有组件。
 
@@ -161,7 +164,7 @@ width:expression(document.body.clientWidth < 600 ? “600px” : “auto”);
 
 最常见的重定向状态码是 302，（304并不是重定向），从定向的响应头中包含了 Location 字段，这个告诉浏览器转而访问另外一个页面。HTML文档中也可以进行重定向：
 
-```
+```html
 <meta http-equiv="refresh" content="1; url=http://baidu.com">
 ```
 

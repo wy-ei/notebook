@@ -1,12 +1,14 @@
 ---
 layout: post
-title: 数据库基本操作
+title: 关系型数据库基本操作
 category: 数据库
-tag: 数据库
 ---
 
-* toc
+
+
+- *
 {:toc}
+
 
 ## 操作数据库
 
@@ -260,18 +262,44 @@ WHERE NOT id = ALL
 
 因为子查询能够返回一个临时的关系，这个关系就可以作为 FROM 子句的值。
 
-### SQL 的连接表达式
+## SQL 的连接表达式
+
+针对这两个关系，`Students(id, name, class)` 和 `Teachers(id, name, class)`：
+
+### 交叉连接
+
+交叉连接和笛卡尔积是一个意思，如果要计算这两个关系的积，可以写作：
 
 ```sql
-SELECT name
-FROM student join 
+Students CROSS JOIN Teachers;
 ```
+
+结果则会是一个含有 6 个列的关系，关系中的每个元组由来自 `Students` 和 `Teachers` 两个关系中的元组组成。
+
+通常直接使用交叉连接的情况很少，往往会通过关键字 `ON` 来进行 `θ` 连接：
+
+```sql
+Students JOIN Teachers ON
+    Students.class = Teachers.class;
+```
+
+先进行交叉连接，而后根据 `ON` 后面的条件来筛选符合条件的元组。只有班级相同才会选出来。
 
 ### 自然连接
 
-NATURAL JOIN
+`NATURAL JOIN` 对两个关系中具有相同名字且值相同的属性进行连接。
 
 ### 外连接
+
+在悬浮元组中填充 NULL 值使之成为查询结果。
+
+`FULL OUTER JOIN`、`LEFT OUTER JOIN`、`RIGHT OUTER JOIN`。
+
+
+
+两个元组进行 JOIN 会得到一些悬浮元组，比如 R(A,B,C) 和 S(A,B,D) 进行 JOIN 后得到的元组含有 4 个属性。得到的这些元组中有的可能 C 属性为空，有的可能 D 属性为空。
+
+FULL 则保留所有悬浮元组，LEFT 只保留左边关系中包含属性都存在的元组，RIGHT 保留右边关系中包含的属性都存在的元组。
 
 ## 全关系操作
 
@@ -352,21 +380,34 @@ UPDATE student SET class='3-3' WHERE name='wangyu';
 
 ## SQL 中的事务
 
-数据库可能被多台服务器的多个进程访问，每秒钟可能访问上万次。设想这种场景，用户点击一下某个按钮，需要将数据库中的某个字段加1，这需要读出原来的值，加 1 后再写回，问题是在它读出后写回之前，有其他进程完成了写回操作，这个时候再写回的时候就出错了。因此需要保障，读出以及写入不能被打断。事务就是用来处理这类问题的。
+数据库可能被多台服务器的多个进程访问，每秒钟可能访问上万次。设想这种场景，用户点击一下某个按钮，需要将数据库中的某个字段加 1，这需要读出原来的值，加 1 后再写回，问题是在它读出后写回之前，有其他进程完成了写回操作，这个时候再写回的时候就出错了。因此需要保障，读出以及写入不能被打断。事务就是用来处理这类问题的。
 
-标记事务开始：`START TRANSACTION`
+事务是一组需要一起执行的操作，上面举的例子，读取并更新就构成一个事务，这两步操作不应该被打断。事务是必须原子地执行的一个或者多个数据库操作的集合，要么所有操作都执行，要么所有操作都不执行。
 
-有两种方式结束事务：
+默认每执行一条语句就把这条语句当成一个事务然后进行提交。但程序员也可以将几条语句组成一个事务。使用 `START TRANSACTION` 标记事务开始，有两种方式结束事务：
 
 1. COMMIT 使事务成功结束
 2. ROLLBACK 使事务夭折
 
 ### 只读事务
 
-指定一个事务是只读事务，可以让多个访问同一数据的只读事务并发执行。 `START TRANSATION READ ONLY;`
+如前面举的例子，读取一个数，而后将其加 1 后写回，这个事务一旦开始，其他读取者就必须阻塞至该事务完成之后。但是如果一个事务只会读数据而不会更新数据，那么就可以不阻塞其他读取者。指定一个事务是只读事务，可以让多个访问同一数据的只读事务并发执行。在开始事务之前，使用 
 
-事实的默认模式为 `READ WRITE` 即 `START TRANSACTION` 等价于 `START TRANSATION READ WRITE;`
+```sql
+SET TRANSATION READ ONLY;
+```
 
+告诉 SQL 系统接下来的事务是只读事务。务的默认模式为 `READ WRITE`。
+
+
+### 读脏数据
+
+当一个事务更新了数据但是还没有提交时，这些数据就是脏数据。读脏数据有时候也很有用，比如在 Web 页面中要展示某项活动的参加人数，这个人数还在不断地上涨中，但当用户请求该数据时，就可以不等待正在执行 +1 操作的事务提交，读取这个脏数据也没有什么关系。
+
+```sql
+SET TRANSATION READ WRITE
+    ISOLATION LEVEL READ UNCOMMITTED;
+```
 
 ## 键和外键
 
@@ -450,7 +491,7 @@ CREATE TABLE R(
 );
 ```
 
-## 修改约束
+### 修改约束
 
 任何时候都可以增进、修改、删除约束，为了修改或者删除约束，就要给约束命名。在约束前加 `CONSTRAINT <约束名>` 来给约束命名：
 
@@ -479,6 +520,25 @@ ALTER TABLE Student DROP CONSTRAINT nameNotNull;
 ALTER TABLE Student ADD CONSTRAINT idAsKey PRIMARY KEY (id);
 ALTER TABLE Student ADD CONSTRAINT nameNotNull NOT NULL (name);
 ```
+
+### 断言
+
+Check 可以针对单个属性，也可以针对单个元组，还可以针对关系。
+
+```sql
+CREATE ASSERTION count_samll_than_100 CHECK
+(
+    100 >
+    (
+        SELECT COUNT(id)
+        FROM Students
+    )
+);
+```
+
+各种约束的比较如下：
+
+<div align="center"><img src="https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/18-3-23/53337733.jpg"  /></div>
 
 
 ## 虚拟视图

@@ -2,10 +2,11 @@
 layout: post
 title: 避免强制性同步布局
 category: Web
-tag: 性能优化
 ---
 
-* toc
+
+
+- *
 {:toc}
 
 强制性同步布局，发生在使用 JavaScript 改变了 DOM 元素的属性，而后又读取 DOM 元素的属性。比如改变了 DOM 元素的宽度，而后又使用 `clientWidth` 读取 DOM 元素的宽度。这个时候由于为了获取到 DOM 元素真实的宽度，需要重新计算样式。
@@ -61,19 +62,19 @@ for(let i = 0,len = divs.length; i<len; i++){
 
 **强制性同步布局：**
 
-![](http://7xs1gu.com1.z0.glb.clouddn.com/2016-11-11/319890.jpg)
+![](https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/2016-11-11/319890.jpg)
 
 这个时候会看到浏览器进行了很多次的重新计算样式（Recalculate Style） 和 布局（Layout），也叫做 reflow 的操作，且这一帧用时很长。
 
 **分离读写：**
 
-![](http://7xs1gu.com1.z0.glb.clouddn.com/2016-11-11/147743.jpg)
+![](https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/2016-11-11/147743.jpg)
 
 这个时候，浏览器只进行了一次 reflow，用时很短。
 
 **使用 requestAnimationFrame:**
 
-![](http://7xs1gu.com1.z0.glb.clouddn.com/2016-11-11/625120.jpg)
+![](https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/2016-11-11/625120.jpg)
 
 这个方案也很快，只是因为调用了 `requestAnimationFrame` 很多次添加了很多回调，这个时候会有很多函数调用。建议对于将该方法用在回调较少的场景下。其实另外一个可行的方案是在 `requestAnimationFrame` 中批量来写 DOM
 元素。

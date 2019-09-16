@@ -2,11 +2,11 @@
 layout: post
 title: GPU 是如何加速网页渲染的
 category: Web
-description: 前端工程师应该都听说过硬件加速，通常它是指利用 GPU 来加速页面的渲染。那么 GPU 目前在web页面的渲染过程中起到什么作用呢？
-tag: 性能优化
 ---
 
-* toc
+
+
+- *
 {:toc}
 
 前端工程师应该都听说过硬件加速，通常它是指利用 GPU 来加速页面的渲染。那么 GPU 目前在web页面的渲染过程中起到什么作用呢？
@@ -21,13 +21,13 @@ GPU 包含几百上千个核心，但每个核心的结构都相对简单， GPU
 
 浏览器利用 HTML 构建出 DOM 树，利用 CSS 构建 CSSOM 树，最终得到 Render 树。
 
-![text=渲染树的构建过程](http://7xs1gu.com1.z0.glb.clouddn.com/16-9-24/93321516.jpg)
+![text=渲染树的构建过程](https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/16-9-24/93321516.jpg)
 
 然而这只是很宏观的描述，浏览器为了将 DOM 元素高效地绘制且正确地出来，将多个元素安排在一个图层中，使用 PaintLayer 来描述，在每个 PaintLayer 中又存在 GraphicsLayers。当某个元素的样式改变后，不需要去重绘某个图层就好了。
 
 浏览器的每一帧都可能会经过以下几个步骤：
 
-![](http://7xs1gu.com1.z0.glb.clouddn.com/16-9-24/92671229.jpg)
+![](https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/16-9-24/92671229.jpg)
 
 JavaScript 的执行可能修改 DOM 树和 CSSOM 树，随后浏览器需要重新计算样式，并根据新的样式计算出元素的实际属性（比如 CSS 中 width 是 50%，这里就要利用父元素的宽度得出自己真实的 width 值），重绘有变动的图层，随后将各图层传递给 GPU ，由 GPU 来进行图层的合并。
 
