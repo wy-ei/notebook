@@ -31,7 +31,7 @@ tag: 推荐系统
 
 **1. Neighborhood methods**
 
-这类方法会寻找相似用户或相似物品，以相似关系为依据来生成推荐。包括 Item-based CF 和 User-based CF 两类。详细内容可以参见[这里]({% post_url rec/2019-08-31-item-based-cf %})。
+这类方法会寻找相似用户或相似物品，以相似关系为依据来生成推荐。包括 Item-based CF 和 User-based CF 两类。
 
 **2. Latent factor models**
 
@@ -126,15 +126,15 @@ $$
 
 考虑到上面这些，作者引入用户的 implicit feedback 和 user attributes 等信息。
 
-implicit feedback 指的是浏览记录、搜索记录等。定义 $N(u)$ 为用户有过 implicit feedback 的 items 集合，每一个 item 对应一个向量 $$x_{i} \in R^{f}$$ ，$N(u)$ 中的 items 给用户带来的特征可以表示为：
+implicit feedback 指的是浏览记录、搜索记录等。定义 $N(u)$ 为用户有过 implicit feedback 的 items 集合，每一个 item 对应一个向量 $x_{i} \in R^{f}$ ，$N(u)$ 中的 items 给用户带来的特征可以表示为：
 
 $$
 |N(u)|^{-0.5} \sum_{i \in N(u)} x_{i}
 $$
 
-前面的 `$|N(u)|^{-0.5}$` 用于归一化。
+前面的 $|N(u)|^{-0.5}$ 用于归一化。
 
-另外用户自身的属性也是一个信息来源，设用户有一组特征 $A(u)$，每个特征用向量表示 `$y_{a} \in \mathbb{R}^{f}$`，用户的属性给用户来的特征可以表示为：
+另外用户自身的属性也是一个信息来源，设用户有一组特征 $A(u)$，每个特征用向量表示 $y_{a} \in \mathbb{R}^{f}$，用户的属性给用户来的特征可以表示为：
 
 $$
 \sum_{a \in A(u)} y_{a}
@@ -146,7 +146,7 @@ $$
 \hat{r}_{u i}=\mu+b_{i}+b_{u}+q_{i}^{T}\left[p_{u}+|N(u)|^{-0.5} \sum_{i \in N(u)} x_{i}+\sum_{a \in A(u)} y_{a}\right]
 $$
 
-和 `$\eqref{2}$` 比起来，就相当于 $p_u$ 做了些调整。
+和 $\eqref{2}$ 比起来，就相当于 $p_u$ 做了些调整。
 
 ### Temporal dynamics
 
