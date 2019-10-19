@@ -9,7 +9,7 @@ permalink: /
     <ul class="m-list">
     {% for post in site.posts %}
     <li class="list-item">        
-        <a href="{{site.base_url}}{{ post.url }}">
+        <a href="{{site.base_path}}{{ post.url }}">
             <span class="post-date">{{ post.date|date:"%Y-%m-%d" }}</span><p class="post-title">{{ post.title }}</p>
         </a>
     </li>

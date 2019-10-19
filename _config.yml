@@ -20,7 +20,7 @@ base_path: "/notebook"
 source_url: "https://wangyu.name"
 
 url: https://wy-ei.github.io/notebook
-base_url: ''
+
 rss_path: /rss.xml
 atom_path: /atom.xml
 excerpt_separator: "<!--more-->"
