@@ -2,7 +2,7 @@
 layout: post
 title: 关于
 nav: about
-permalink: /notebook/about/
+permalink: /about/
 ---
 
 <style>
