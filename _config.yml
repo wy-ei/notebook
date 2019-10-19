@@ -1,0 +1,30 @@
+layouts_dir: docs/_layouts
+includes_dir: docs/_includes
+
+encoding: utf-8
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  toc_levels: 2..3
+
+permalink: /posts/:year/:slug/
+
+
+title: WangYu's Notes
+slogan: 好记性，不如烂笔头。
+
+images: https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/
+
+base_path: "/notebook"
+source_url: "https://wangyu.name"
+
+url: https://wy-ei.github.io/notebook
+base_url: ''
+rss_path: /rss.xml
+atom_path: /atom.xml
+excerpt_separator: "<!--more-->"
+author :
+  name : wy-ei
+  email : wangyu_it@yeah.net
+  github : wy-ei

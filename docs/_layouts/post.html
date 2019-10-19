@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div class="post">
+    {% if page.title %}
+    <h1 class="page__title ">{{page.title}}</h1>
+    {% endif %}
+    {% if page.date %}
+    <div class="post-info">
+        {% if page.categories.size > 0 %}
+        <span class="category">分类于：<a href="{{site.base_path}}/categories/#{{ page.categories[0] }}">{{ page.categories[0] }}</a></span>
+        {% endif %}
+        <span>发布于：{{ page.date|date:"%Y-%m-%d" }}</span>    
+    </div>
+    {% endif %}
+    <div class="typo content">
+        {% if page.cover %}
+        <div class="article__picture">
+            <img src="{{page.cover}}" alt="">
+        </div>
+        {% endif %}
+        {{ content }}
+    </div>
+</div>

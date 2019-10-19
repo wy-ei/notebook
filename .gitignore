@@ -2,3 +2,5 @@ _site/*
 *.out
 .idea
 .vscode
+.sass-cache/
+/src/

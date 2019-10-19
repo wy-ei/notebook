@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="author" content="wangyu" />
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+    {% else %}
+    <meta name="description" content="{{ page.content | strip_html |remove:'\n'|trim|truncate:80,'' }}">
+    {% endif %}
+    <meta name="keywords" content="{{ page.tags | join:',' }} ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="{{site.source_url}}/src/css/style.css" type="text/css" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="msapplication-navbutton-color" content="#f3f3f3">
+    <meta name="theme-color" content="#f3f3f3">
+    <script>
+        {% include init.js %}
+        {% if page.math %}
+            window.__math__ = true;
+        {% endif %}
+    </script>
+</head>
+<body>
+    <header class="m-header">
+        <div class="wrap">
+            <div class="site-title">
+                <h1 class="site-name">{{ site.title }}</h1>
+                <h2 class="site-slogan">{{ site.slogan }}</h2>
+            </div>
+            <nav class="site-nav">
+                <ul>
+                    <li><a {% if page.nav == 'home' %}class="active"{% endif %} href="{{site.base_path}}/"><i class="iconfont icon-home"></i>首页</a></li>
+                    <!-- <li><a {% if page.nav == 'list' %}class="active"{% endif %} href="{{ site.list_path }}/"><i class="iconfont icon-list"></i>列表</a></li> -->
+                    <li><a {% if page.nav == 'category' %}class="active"{% endif %} href="{{site.base_path}}/categories/"><i class="iconfont icon-folder"></i>分类</a></li>
+                    <li><a {% if page.nav == 'about' %}class="active"{% endif %} href="{{site.base_path}}/about/"><i class="iconfont icon-plane"></i>关于</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="m-main">
+        <div class="wrap">
+            {{ content }}
+        </div>
+    </section>
+    {% include footer.html %}
+
+    {%if page.issue %}
+    <script src="{{site.source_url}}/src/js/lib/marked.min.js"></script>
+    {% endif %}
+    
+    
+    <script>{% include app.js %}</script>
+</body>
+</html>
