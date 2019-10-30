@@ -44,7 +44,7 @@ $ jupyter notebook password
 
 ## 在服务器上部署
 
-一种场景是，希望在服务器上运行 jupyter lab，然后可以在任何地方，使用任何设备访问到 jupyter lab 环境。默认情况下，只能通过 `http://localhost:8888` 这个地址访问，通过服务器的 IP 是访问不了的，需要做如下配置：
+一种场景是，希望在服务器上运行 jupyter lab，然后可以在任何地方，使用任何设备访问到 jupyter lab 环境。默认情况下，只能通过 `http://localhost:8888` 这个地址访问，通过服务器的 IP 是访问不了的，需要做一些配置。
 
 初始阶段 jupyter lab 采用默认配置，如果需要对其个性化配置，需要先生成配置项：
 
@@ -59,8 +59,8 @@ $ jupyter notebook --generate-config
 
 ```python
 # 当你使用服务器的 ip 访问的时候，可以不配置这一项
-# 当时如果使用外网穿透技术，访问的 ip 不是部署 jupyter lab
-# 的机器的 ip 的时候，就需要配置这个了，否则部分功能无法正常工作
+# 当时如果使用外网穿透技术，访问的 ip 不是部署 jupyter lab 的机器的 ip 的时候，
+# 就需要配置这个了，否则部分功能无法正常工作
 c.NotebookApp.allow_origin = '*'
 
 # 修改可以通过本机的任意一个 ip 地址来访问 jupyter lab 环境
@@ -73,6 +73,15 @@ c.NotebookApp.open_browser = False
 c.NotebookApp.port = 8000
 ```
 
+## Magic Command
+
+此命令可以查看函数的性能瓶颈，看到函数每一行的运行次数和时间。
+
+```python
+%load_ext line_profiler
+
+%lprun -f Quick.sort Quick.sort(nums)
+```
 
 ## 快捷键
 
