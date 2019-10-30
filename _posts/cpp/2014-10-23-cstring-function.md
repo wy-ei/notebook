@@ -1,7 +1,7 @@
 ---
 layout: post
 title: C字符串库函数实现
-category:
+category: C/C++
 ---
 
 
