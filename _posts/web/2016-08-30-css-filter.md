@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CSS filter - 滤镜效果
-category: CSS
+category: Web
 ---
 
 

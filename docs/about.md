@@ -21,4 +21,5 @@ permalink: /about/
 通过下面链接可以找到我：
 
 - => GitHub：[WangYu](https://github.com/wy-ei)
+- => 微博：[钰帝](https://weibo.com/wangyu1993it)
 - => 邮箱：[wangyu_it@yeah.net](mailto:wangyu_it@yeah.net)

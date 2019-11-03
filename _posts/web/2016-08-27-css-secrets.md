@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CSS 揭秘 - 读书笔记
-category: CSS
+category: Web
 ---
 
 - *

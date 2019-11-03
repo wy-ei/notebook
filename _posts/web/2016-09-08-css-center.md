@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CSS 垂直居中
-category: CSS
+category: Web
 ---
 
 

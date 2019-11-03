@@ -16,10 +16,10 @@ slogan: 好记性，不如烂笔头。
 
 images: https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/
 
-base_path: "/notebook"
+base_path: ""
 source_url: "https://wangyu.name"
 
-url: https://wy-ei.github.io/notebook
+url: https://notes.wangyu.name/
 
 rss_path: /rss.xml
 atom_path: /atom.xml

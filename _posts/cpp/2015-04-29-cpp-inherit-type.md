@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C++ 继承方式讲解
+title: C++ 继承方式
 category: C/C++
 ---
 
