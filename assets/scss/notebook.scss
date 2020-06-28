@@ -1,0 +1,127 @@
+.nb-notebook {
+    line-height: 1.5;    
+}
+
+.nb-stdout,
+.nb-stderr,
+.nb-text-output{
+    margin-bottom: 0!important;
+    max-height: 300px;
+    font-family: 'Source Code Pro', Courier, 'Courier New', PingFang SC;
+}
+
+.nb-output pre{
+    font-size: 13px;
+    border: none;
+    margin: 0px;
+    padding: 5px;
+    overflow-x: auto;
+    overflow-y: auto;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.nb-output .nb-stdout,
+.nb-output .nb-text-output{
+    background: none;
+}
+
+.nb-output .nb-stderr,
+.nb-output .nb-pyerr{
+    background-color: #Fdd!important;
+}
+
+.nb-html-output{
+    overflow: hidden;
+}
+
+.nb-html-output pre{
+    font-family: 'Source Code Pro', Courier, 'Courier New', PingFang SC;
+}
+
+.nb-cell + .nb-cell {
+    margin: 1em 0;
+}
+
+.nb-output table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.nb-output th {
+    font-weight: bold;
+}
+
+.nb-output th, .nb-output td {
+    border: 1px solid #000;
+    padding: 0.25em;    
+    text-align: left;
+    vertical-align: middle;
+    border-collapse: collapse;
+}
+
+.nb-cell {
+    position: relative;    
+}
+
+.nb-raw-cell {
+    white-space: pre-wrap;
+    background-color: #f5f2f0;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    padding: 1em;
+    margin: .5em 0;
+}
+
+.nb-output {
+    position: relative;
+    min-height: 1em;
+    width: 100%;
+}
+
+.nb-output img {
+    max-width: 100%;    
+}
+
+.nb-output::before, .nb-input::before {
+    position: absolute;
+    font-size: 12px;
+    color: #999;
+    left: -7.5em;
+    top: 7px;
+    width: 7em;
+    text-align: right;
+    font-family: 'Source Code Pro', Courier, 'Courier New', PingFang SC;
+}
+
+.nb-input{
+    position: relative;
+}
+
+.nb-input pre{
+    padding: 0.5em 1em;
+    margin-bottom: 0.5em;
+    white-space: pre;
+    overflow: auto;
+    font-size: 13px;
+    background: #f5f5f5;
+}
+
+.nb-input code[class*="language-"]{
+    font-family: 'Source Code Pro', Courier, 'Courier New', PingFang SC;
+}
+
+.nb-input::before {
+    color: #303F9F;
+    content: "In:"
+    // content: "In[" attr(data-prompt-number) "]:";
+}
+.nb-input+.nb-output::before {
+    color: #D84315;
+    content: "Out:";
+}
+
+div[style="max-height:1000px;max-width:1500px;overflow:auto;"] {
+    max-height: none !important;    
+}
+

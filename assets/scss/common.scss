@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+
+
+.post-info{
+    height: .15rem;
+    font-size: .12rem;
+    color: #8c8c8c;
+    padding: .1rem 0;
+    list-style: none;
+    margin-right: 1em;
+    span{
+        margin-right: 1em;    
+    }
+}
+
+.page{
+    &__title{
+        padding: .1rem 0;
+        line-height: 1.5em;
+        font-size: .22rem;
+        color: #333;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: .5rem;
+    }
+}
+
+#vcomments{
+    margin-top: 100px;
+}
+#vcomments .vempty{
+    font-size: 14px;
+}
+
+#vcomments .vinput{
+    font-size: 14px!important;
+}
+
+i.icon{
+    margin-right: .3em; 
+}
+
+
+.loading{
+    width: 100%;
+    background-image: url(/images/loading.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 300px;
+}

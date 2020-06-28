@@ -1,0 +1,10 @@
+@media print {
+    .m-header,
+    .m-footer,
+    .m-tools{
+        display: none;
+    }
+    .m-main{
+        padding: .2rem;
+    }
+}

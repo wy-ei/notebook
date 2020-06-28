@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+
+// 默认为手机屏幕，手机上不需要很大的字
+html {
+    font-size: 100px;
+    background: #fff;
+}
+
+body{
+    font-size: .14rem;
+    position: relative;
+    min-height: 100vh;
+}
+
+a {
+    transition: color 300ms;
+    cursor: pointer;
+    &:hover {
+        text-decoration: none;
+        color: $active-color;
+    }
+}
+
+.wrap {
+    margin: auto;
+    width: 800px;
+}
+
+@each $max-width, $width in (1400px: 70%, 1023px: 80%, 768px: 95%) {
+  @media screen and (max-width: $max-width) {
+      .wrap {
+          width: $width;
+      }
+  }
+}
+
+@media screen and (min-width: 1401px){
+    .wrap{
+        width: 1000px;
+    }
+}
+
+
+
+/* container layout */
+.m-main {
+    padding-bottom: 2rem;
+}

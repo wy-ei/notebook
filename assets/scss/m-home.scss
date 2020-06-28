@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+
+.home{
+    @at-root .article{
+        padding-bottom: .25rem;
+        margin: .45rem 0px;
+        border-bottom: 1px solid #EEE;
+        &__title{
+            font-size: .18rem;
+            font-weight: 400;
+            color: #4f4f4f;
+            margin-bottom: .1rem;
+        }
+
+        &__picture{
+            margin: 1em 0;
+            img{
+                width: 100%;
+            }
+        }
+
+        &__excerpt{
+            margin: 16px 0 0;
+            font-size: .14rem;
+            color: #737373;
+            line-height: 2em;
+            word-break: break-all;
+        }
+
+        &__excerpt:empty{
+            display: none;
+        }
+    }
+
+    .more--article-list{
+        margin-top: .40rem;
+        display: inline-block;
+    }
+
+    .more--article{
+        margin-top: .15rem;
+        display: inline-block;
+    }
+}
+
+
+.banner{
+    border-radius: 7px;
+    height: 460px;
+    margin: 18px auto;
+    box-shadow: rgba(0,0,0,.08) 0 1px 3px;
+    border: 1px solid rgba(0,0,0,.14);
+}

@@ -55,6 +55,9 @@ APP.prototype.addEventListener = function(){
     if(toTop){
         toTop.addEventListener('click', this.toTop);
     }
+    if(window.Prism){
+        Prism.highlightAll();
+    }
 };
 
 APP.prototype.addServiceWorker = function(){

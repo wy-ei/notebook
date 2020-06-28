@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+
+
+.post {
+    .page__title{
+        margin-bottom: 0;
+    }
+
+    .content {
+        font-size: 14px;
+        color: #333;    
+        padding-top: .1rem;
+        img {
+            display: block;
+            margin: auto;
+        }
+        .img-alt {
+            text-align: center;
+            > p {
+                font-style: italic;
+                line-height: 1.5em;
+                display: inline-block;
+                margin: 1em auto;
+                text-indent: 0;
+                border-bottom: 1px solid #d9d9d9;
+            }
+        }
+
+        iframe {
+            display: block;
+            margin: auto;
+            padding-top: 1em;
+            padding-bottom: 2em;
+            border: none;
+        }
+        iframe[src*='music'] {
+            width: 100%;
+        }
+        .emoji {
+            display: inline-block;
+            height: 1.33em;
+            width: 1.33em;
+            border: none;
+            vertical-align: -0.3em;
+            margin: 0 0.1em;
+            overflow: visible;
+        }
+
+        table{
+            width: 100%;
+        }
+
+        .footnotes{
+            margin-top: 50px;
+            ol{
+                margin-left: 20px;
+            }
+        }
+        .footnotes::before{
+            content: "参考文献";
+            font-size: 1.2em;
+            border-bottom: 1px dotted #d1d1d1;
+            display: block;
+            line-height: 2em;
+            margin-bottom: 20px;
+        }
+        .footnote{
+            margin-left: 5px;
+        }
+        .footnote::after{
+            content: "]"
+        }
+        .footnote::before{
+            content: "["
+        }
+        
+        h2 code,
+        h3 code,
+        h4 code,
+        h5 code,
+        li code,
+        lo code,
+        p code{
+            font-size: 90%;
+            padding: .2em .4em;
+            font-family: $code-font-family;
+            background-color: rgba(27,31,35,.05);
+            border-radius: 6px;
+
+        }
+
+    }
+
+
+
+    #markdown-toc {
+        margin: 0;
+        background: #f5f5f5;
+        padding: 1em;
+        margin-bottom: .3rem;
+        li {
+            list-style-position: inside;
+        }
+    }
+    #markdown-toc::before {
+        content: '目录:';
+        display: block;
+        font-size: 1.5em;
+        color: #333;
+        border-bottom: 1px dotted #ccc;
+        margin: .5em 0 20px 0;
+    }
+
+    .toc{
+        margin-bottom: 30px;
+        background: #f5f5f5;
+        padding: 1em;
+    }
+    .toc ul{
+        margin-bottom: 0;
+    }
+    .toc h2{
+        margin-top: 0;
+    }
+    .toc-level-2{
+        margin-left: 1.5em;
+    }
+    .toc-level-3{
+        margin-left: 3em;
+    }
+    .toc-level-4{
+        margin-left: 4.5em;
+    }
+
+}
