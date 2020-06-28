@@ -3,4 +3,3 @@ _site/*
 .idea
 .vscode
 .sass-cache/
-/src/
