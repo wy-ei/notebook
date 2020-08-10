@@ -4,3 +4,5 @@ _site/*
 .vscode
 .sass-cache/
 /images
+**/.ipynb_checkpoints/*
+.DS_Store

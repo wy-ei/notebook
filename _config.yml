@@ -28,3 +28,11 @@ author :
   name : wy-ei
   email : wangyu_it@yeah.net
   github : wy-ei
+  
+  
+defaults:
+  - scope:
+      path: "_posts/draft"
+    values:
+      layout: "post"
+      published: false
