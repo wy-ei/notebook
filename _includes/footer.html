@@ -7,3 +7,9 @@
         </div>
     </div>
 </footer>
+
+{%if page.issue %}
+<script src="{{site.base_path}}/assets/js/lib/marked.min.js"></script>
+{% endif %}
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+<script src="{{site.base_path}}/assets/js/app.js"></script>

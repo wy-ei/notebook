@@ -123,7 +123,7 @@ Idx Name          Size     VMA          Type
 
 访问一个其他模块中定义的变量，由于其他模块装载的位置不确定，该变量的位置自然也不确定了。因此在链接的时候，能够通过符号知道某个符号是在哪个模块中，但是不知道这个符号的具体位置。
 
-![](https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/2020/08/10/2020-08-10-215528.png)
+![<width,500px>](https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/2020/08/10/2020-08-10-215528.png)
 
 模块中有一个 GOT（Global Offert Table），这个表用来记录全局变量和和函数的实际位置。模块被装载进来后，装载器会根据模块被加载的位置和模块中各个数据的偏移，计算出绝对位置，然后填到这个表里面，GOT 在链接的时候就预留好了。各个模块加载进来之后只需要把自己的暴露出来的函数和数据填入表中即可。
 
@@ -244,7 +244,7 @@ void* sbrk(int offset); // 把目前 data 段的上边界扩大 offset，然后�
 
 mmap 用来把文件映射到内存中，并返回该内存。但是也可以选择不映射文件，这样就只是返回一块内存空间。munmap 可以用来释放映射的空间。
 
-```c++
+```cpp
 #include <sys/mman.h>
 #include <unistd.h>
 #include <sys/fcntl.h>

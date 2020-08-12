@@ -11,17 +11,13 @@
     {% endif %}
     <meta name="keywords" content="{{ page.tags | join:',' }} ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" href="{{site.base_path}}/assets/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://wangyu.name/assets/css/style.css" type="text/css" />
+    <link rel="shortcut icon" href="https://wangyu.name/assets/images/favicon.ico" type="image/x-icon">
     <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta name="msapplication-navbutton-color" content="#f3f3f3">
     <meta name="theme-color" content="#f3f3f3">
-    <script>
-        {% include init.js %}
-        {% if page.math %}
-            window.__math__ = true;
-        {% endif %}
-    </script>
+    {% include init.html %}
 </head>
 <body>
     <header class="m-header">
@@ -46,12 +42,5 @@
         </div>
     </section>
     {% include footer.html %}
-
-    {%if page.issue %}
-    <script src="{{site.base_path}}/assets/js/lib/marked.min.js"></script>
-    {% endif %}
-    <script src="{{site.base_path}}/assets/js/lib/prism.js"></script>
-    
-    <script>{% include app.js %}</script>
 </body>
 </html>

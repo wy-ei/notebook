@@ -45,6 +45,7 @@ APP.prototype.init = function(){
             _this.setImage();
             _this.renderMath();
         }    
+        _this.highlight();
         _this.addEventListener();
     });
 }
@@ -54,9 +55,6 @@ APP.prototype.addEventListener = function(){
     var toTop = document.querySelector('.m-to-top');
     if(toTop){
         toTop.addEventListener('click', this.toTop);
-    }
-    if(window.Prism){
-        Prism.highlightAll();
     }
 };
 
@@ -200,6 +198,11 @@ APP.prototype.load_from_github_issues = function(repo, issue_id, dom_id){
     });
 }
 
+APP.prototype.highlight = function(){  
+    document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+    });
+};
 
 APP.prototype.render_notebook = function (ipynb, container) {
     var notebook = nb.parse(ipynb);
@@ -219,8 +222,8 @@ APP.prototype.render_notebook = function (ipynb, container) {
     }
 
     container.appendChild(elem);
-    Prism.highlightAll();
     this.renderMath();
+    this.highlight();
     this.buildTOC();
     this.setImage();
 
