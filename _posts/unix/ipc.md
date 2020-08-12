@@ -1,3 +1,6 @@
+
+https://beej.us/guide/bgipc/pdf/bgipc_A4.pdf
+
 ## 进程间通信
 
 字节流形式

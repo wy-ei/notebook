@@ -1,3 +1,9 @@
+---
+layout: post
+title: 链接与装载相关知识
+category: 理解计算机
+---
+
 ## 静态链接
 
 静态链接把所以依赖的模块打包成一个可执行文件，依赖的模块升级之后，无论 ABI 有没有改变，都需要重新链接。而且如果系统中存在很多个进程的可执行文件都是静态链接的，那么就会存在大量的空间浪费。
@@ -180,7 +186,7 @@ Linux 系统中系统调用是使用 0x80 中断完成的，各个通用寄存�
 
 下图中为调用 fork 的流程：
 
-![](https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/2020/08/10/2020-08-10-214838.png)
+![<w,800px>](https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/2020/08/10/2020-08-10-214838.png)
 
 用户调用 fork，设置 eax=2，使用 int 0x80 指令产生系统中断，系统调用 0x80 中断的中断处理函数，此处理函数再更具 eax 的值，找到对应的系统调用 sys_fork 然后调用该函数，调用完成后返回用户态。
 
@@ -188,11 +194,11 @@ Linux 系统中系统调用是使用 0x80 中断完成的，各个通用寄存�
 
 Linux 下一个进程里典型的内存布局：
 
-![](https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/2020/08/10/2020-08-10-231550.png)
+![<width,450px>](https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/2020/08/10/2020-08-10-231550.png)
 
 ## 栈与函数调用
 
-![](https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/2020/08/10/2020-08-10-231640.png)
+![<width,550px>](https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/2020/08/10/2020-08-10-231640.png)
 
 ```c
 int foo(){
@@ -211,7 +217,7 @@ int foo(){
 
 下面是 foo 函数的汇报代码：
 
-```sh
+```python
 push %ebp # 先把 ebp 压入栈中
 mov %esp, %ebp # 把当前的 esp 作为新的 ebp
 sub $16, %esp # 为当前栈帧开辟空间

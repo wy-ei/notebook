@@ -18,6 +18,7 @@ images: https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/
 
 base_path: "/notebook"
 # base_path: ""
+# port: 8002
 
 url: https://notes.wangyu.name/
 

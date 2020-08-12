@@ -31,7 +31,7 @@ tag: 推荐系统
 
 **1. Neighborhood methods**
 
-这类方法会寻找相似用户或相似物品，以相似关系为依据来生成推荐。包括 Item-based CF 和 User-based CF 两类。详细内容可以参见[这里]({% post_url 2019-08-31-item-based-cf %})。
+这类方法会寻找相似用户或相似物品，以相似关系为依据来生成推荐。包括 Item-based CF 和 User-based CF 两类。详细内容可以参见[这里]({% post_url rec/2019-08-31-item-based-cf %})。
 
 **2. Latent factor models**
 

@@ -6,3 +6,4 @@ _site/*
 /images
 **/.ipynb_checkpoints/*
 .DS_Store
+.jekyll-cache/
