@@ -15,7 +15,7 @@ includes_dir: site/_includes
 future: true
 
 sass:
-  sass_dir: /assets/css/scss
+  sass_dir: /site/assets/css/scss
   style: compressed
 
 
@@ -31,9 +31,9 @@ list_path: /notebook/list/
 tags_path: /notebook/tags/
 about_path: /notebook/about/
 
+assets_path: /notebook/assets
+
 base_url: "http://wy-ei.github.io/notebook/"
-rss_path: /rss.xml
-atom_path: /atom.xml
 excerpt_separator: "<!--more-->"
 author :
   name : wy-ei

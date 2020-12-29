@@ -1,0 +1,21 @@
+@media print {
+    .m-header,
+    .m-footer,
+    .m-tools,
+    .m-to-top{
+        display: none;
+    }
+    .m-main{
+        padding: .2rem;
+    }
+    .m-post .typo{
+        a{
+            color: #444;
+            border-bottom: 1px solid #555;
+        }
+        color: #444;
+        h3 {
+            border-bottom: 0.25pt dashed #999!important;
+        }
+    }
+}

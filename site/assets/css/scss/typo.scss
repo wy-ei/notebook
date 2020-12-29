@@ -1,0 +1,312 @@
+﻿@charset "utf-8";
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+    color: #000;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    font-family: $font-family;
+}
+
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  margin: 0;
+  padding: 0;
+}
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  display: block;
+}
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video {
+  display: inline-block;
+}
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+button, input, select, textarea {
+  font: 400 1em/1.8 $font-family;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* 去掉各Table cell 的边距并让其边重合 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 去除默认边框 */
+fieldset, img {
+  border: 0;
+}
+
+/* 块/段落引用 */
+blockquote {
+  position: relative;
+  color: #555;
+  font-weight: 400;
+  border-left: 2px solid #1abc9c;
+  padding-left: 1em;
+  margin: 1em 3em 1em 0;
+}
+
+@media only screen and ( max-width: 640px ) {
+  blockquote {
+    margin: 1em 0;
+  }
+}
+
+/* Firefox 以外，元素没有下划线，需添加 */
+acronym, abbr {
+  border-bottom: 1px dotted;
+  font-variant: normal;
+}
+
+/* 添加鼠标问号，进一步确保应用的语义是正确的（要知道，交互他们也有洁癖，如果你不去掉，那得多花点口舌） */
+abbr {
+  cursor: help;
+}
+
+/* 一致的 del 样式 */
+del {
+  text-decoration: line-through;
+}
+
+address, caption, cite, code, dfn, th, var {
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
+ul, ol {
+  list-style: none;
+}
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption, th {
+  text-align: left;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+/* 统一上标和下标 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+:root sub, :root sup {
+  vertical-align: baseline; /* for ie9 and other modern browsers */
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* 让链接在 hover 状态下显示下划线 */
+a {
+  color: #000;
+  text-decoration: none;
+  transition: 500ms;
+}
+
+/* 下划线继承字体颜色 */
+.typo a {
+  border-bottom: 1px solid;
+}
+
+a:hover {
+  color: $active-color;
+}
+
+
+/* 标记，类似于手写的荧光笔的作用 */
+mark {
+  background: #fffdd1;
+  border-bottom: 1px solid #ffedce;
+  padding: 2px;
+  margin: 0 5px;
+}
+
+code {
+	font-family: $code-font-family;
+  font-size: 0.9em;
+  color: #a31515;
+}
+
+pre code{
+  font-size: unset;
+  color: unset;
+}
+
+.typo pre{
+    padding: 10px 15px;
+    white-space: pre;
+    overflow: auto;
+    margin-bottom: 1.2em;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    line-height: 24px;
+    background-color: #f8f8f8;
+    font-size: 0.9em;
+}
+
+
+/* 一致化 horizontal rule */
+hr {
+  border: none;
+  border-bottom: 1px solid #cfcfcf;
+  margin-bottom: 0.8em;
+  height: 10px;
+}
+
+/* 底部印刷体、版本等标记 */
+small,
+  /* 图片说明 */
+figcaption {
+  font-size: 0.9em;
+  color: #888;
+}
+
+strong, b {
+  font-weight: bold;
+  color: #000;
+}
+
+/* 可拖动文件添加拖动手势 */
+[draggable] {
+  cursor: move;
+}
+
+
+/* 保证块/段落之间的空白隔行 */
+.typo p, .typo ul, .typo ol, .typo dl, .typo form, .typo table,
+.typo blockquote {
+  margin-bottom: 1.2em;
+  line-height: 2em;
+  overflow-wrap: break-word;
+}
+
+.typo hr {
+  border: none;
+  width: 50%;
+  display: block;
+  margin: 2em auto;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
+.typo h1, .typo h2, .typo h3, .typo h4, .typo h5, .typo h6 {
+  margin: 1.5em 0 1em 0;
+  line-height: 1.7;
+  color: #000;
+}
+
+.typo>h1:first-of-type{
+  margin-top: 0;
+}
+
+
+@each $h, $fs in (h1: .22rem, h2: .22rem, h3: .19rem, h4: 1.1em, h5: 1em, h6: 0.9em) {
+  .typo #{$h} {
+    font-size: $fs;
+  }
+}
+
+
+.typo{
+  h1,h2{
+    border-bottom: 1px solid $border-color;
+  }
+  h3{
+    border-bottom: 1px dotted $border-color;
+  }
+}
+
+.typo{
+  h4,h5,h6{
+    font-weight: 600;
+  }
+}
+
+/* 在文章中，应该还原 ul 和 ol 的样式 */
+.typo ul {
+  margin-left: 1.3em;
+  list-style: disc;
+}
+
+.typo ol {
+  list-style: decimal;
+  margin-left: 1.9em;
+}
+
+.typo li ul, .typo li ol {
+  margin-bottom: 0.8em;
+  margin-left: 2em;
+}
+
+.typo li ul {
+  list-style: circle;
+}
+
+/* 同 ul/ol，在文章中应用 table 基本格式，color 继承外层元素的颜色 */
+.typo table th, .typo table td {
+  border: 1px solid #ddd;
+  padding: 0.25em 0.5em;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.typo table th {
+  background: #fbfbfb;
+}
+
+.typo table thead th {
+  text-align: center;
+  background: #f1f1f1;
+}
+
+.typo table caption {
+  border-bottom: none;
+}
+
+/* 去除 webkit 中 input 和 textarea 的默认样式  */
+.typo input, .typo textarea {
+  border-radius: 0;
+}
+
+legend, caption {
+  color: #000;
+  font-weight: inherit;
+}
+
+.typo em,
+.typo i {
+    font-style: italic;
+}
+
+/* Responsive images */
+.typo img {
+  max-width: 100%;
+}

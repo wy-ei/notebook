@@ -1,0 +1,163 @@
+@charset "utf-8";
+
+
+.post {
+    .content {
+        img {
+            display: block;
+            margin: auto;
+        }
+        .img-alt {
+            text-align: center;
+            > p {
+                line-height: 1.5em;
+                display: inline-block;
+                margin: 1em auto;
+                text-indent: 0;
+                border-bottom: 1px solid $border-color;
+            }
+        }
+
+        iframe {
+            display: block;
+            margin: auto;
+            padding-top: 1em;
+            padding-bottom: 2em;
+            border: none;
+        }
+        iframe[src*='music'] {
+            width: 100%;
+        }
+        .emoji {
+            display: inline-block;
+            height: 1.33em;
+            width: 1.33em;
+            border: none;
+            vertical-align: -0.3em;
+            margin: 0 0.1em;
+            overflow: visible;
+        }
+
+        table{
+            width: 100%;
+        }
+
+        .footnotes{
+            margin-top: 50px;
+            ol{
+                margin-left: 20px;
+            }
+        }
+        .footnotes::before{
+            content: "参考文献";
+            font-size: 1.2em;
+            border-bottom: 1px dotted #d1d1d1;
+            display: block;
+            line-height: 2em;
+            margin-bottom: 20px;
+        }
+        .footnote{
+            margin-left: 5px;
+        }
+        .footnote::after{
+            content: "]"
+        }
+        .footnote::before{
+            content: "["
+        }
+
+        h2 code,
+        h3 code,
+        h4 code,
+        h5 code,
+        li code,
+        lo code,
+        p code{
+            padding: .1em .2em;
+            color: #e50053;
+            border-radius: 4px;
+        
+            &::before, &::after {
+                content: "`";
+            }
+        }
+
+    }
+
+    #markdown-toc{
+        margin: 0;
+        padding: 1em;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        margin-bottom: .3rem;
+        background-color: #f8f8f8;
+        box-sizing: border-box;
+
+        li {
+            list-style-position: inside;
+        }
+    }
+    #markdown-toc::before {
+        content: '目录:';
+        display: block;
+        font-size: .20rem;
+        border-bottom: 1px dotted #ccc;
+        margin-bottom: 20px;
+    }
+
+    .toc{
+        margin-bottom: 30px;
+        background: $gray-background-color;
+        padding: 1em;
+    }
+    .toc ul{
+        margin-bottom: 0;
+    }
+    .toc h2{
+        margin-top: 0;
+    }
+    .toc-level-2{
+        margin-left: 1.5em;
+    }
+    .toc-level-3{
+        margin-left: 3em;
+    }
+    .toc-level-4{
+        margin-left: 4.5em;
+    }
+
+}
+
+
+
+#markdown-toc.popup{
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-55%);
+    z-index: 20;
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.toc-placeholder{
+    display: none;
+    margin-bottom: .3rem;
+    border: 1px solid #fff;
+}
+.popup+.toc-placeholder{
+    display: block;
+}
+.popup+.toc-placeholder::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: #000a;
+    cursor: pointer;
+}
+

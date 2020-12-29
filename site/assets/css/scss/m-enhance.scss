@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+.language-chart{
+    display: none;    
+}
+
+.chart{
+    max-width: 800px;
+    margin: 2em auto;
+}
+
+
+.task-list-item{
+    list-style: none;
+}
+.task-list-item-checkbox{
+    margin: 0 .5em 0 -1.4em;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+}

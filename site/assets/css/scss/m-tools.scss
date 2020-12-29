@@ -1,0 +1,28 @@
+.m-tools{
+    position: fixed;
+    bottom: .4rem;
+    right: .1rem;    
+    transform: translateZ(0);    
+}
+
+.m-tools .btn{
+    display: block;
+    width: .3rem;
+    text-align: center;
+    height: .3rem;
+    border-radius: .05rem;
+    background-color: rgba(170, 170, 170 , 0.5);
+    line-height: .3rem;    
+    cursor: pointer;    
+}
+
+.m-tools .btn:first-of-type{
+    margin-bottom: 1em;
+    font-weight: 900;
+}
+
+@media screen and (max-width: 400px) {
+    .m-tools{
+        display: none;
+    }
+}

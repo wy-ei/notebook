@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+
+// 默认为手机屏幕，手机上不需要很大的字
+html {
+    font-size: 100px;
+    background: #fff;
+}
+
+body{
+    font-size: $content-font-size;
+    position: relative;
+    color: $content-color;
+    min-height: 100vh;
+}
+
+.wrap {
+    margin: auto;
+    width: 900px;
+}
+
+@each $max-width, $width in (1400px: 900px, 1023px: 80%, 768px: 95%) {
+  @media screen and (max-width: $max-width) {
+      .wrap {
+          width: $width;
+      }
+  }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: .14rem;
+    }
+}
+
+/* container layout */
+.m-main {
+    padding-bottom: 2rem;
+}

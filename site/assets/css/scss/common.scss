@@ -1,0 +1,117 @@
+@charset "utf-8";
+.post-info {
+    height: .15rem;
+    font-size: .12rem;
+    color: $secondary-color;
+    padding: .1rem 0;
+    list-style: none;
+    margin-right: 1em;
+    span {
+        margin-right: 1em;
+    }
+}
+
+.page {
+    &__title {
+        font-size: .22rem;
+        color: $title-color;
+        border-bottom: 1px solid $border-color;
+        line-height: 1.8em;
+    }
+}
+
+.page__header{
+    margin-bottom: 40px;
+}
+
+@each $sel in ('.list-item', '.page__title') {
+    @media screen and (max-width: 500px){
+        #{$sel}{
+            border-bottom: none!important;
+            position: relative;
+            &::after{
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transform-origin: left bottom;
+                transform: scaleY(0.5) translateZ(0);
+                box-shadow: inset 0 0 0 1px #ddd;
+            }
+        }
+    }
+
+    @media screen and (min-resolution: 2dppx) and (max-width: 500px){
+        #{$sel}{
+            &::after{
+                box-shadow: inset 0 0 0 0.5px #ddd;
+            }
+        }
+    
+    }
+    
+    @media screen and (min-resolution: 3dppx) and (max-width: 500px){
+        #{$sel}{
+            &::after{
+               box-shadow: inset 0 0 0 0.333333px #ddd;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+@each $sel in ('#markdown-toc', '.typo pre', '.tag-list a', '#tweet .tweet-item') {
+    @media screen and (max-width: 500px){
+        #{$sel}{
+            box-shadow: 0 0 0 1px $border-color;
+            border: none!important;
+        }
+    }
+
+    @media screen and (min-resolution: 2dppx) and (max-width: 500px){
+        #{$sel}{
+            box-shadow: 0 0 0 0.5px $border-color;
+        }
+    
+    }
+    
+    @media screen and (min-resolution: 3dppx) and (max-width: 500px){
+        #{$sel}{
+            box-shadow: 0 0 0 0.333333px $border-color;
+        }
+    }
+    
+}
+
+
+
+#vcomments {
+    margin-top: 100px;
+}
+
+#vcomments .vempty {
+    font-size: .14rem;
+}
+
+#vcomments .vinput {
+    font-size: .14rem!important;
+}
+
+i.icon {
+    margin-right: .3em;
+}
+
+.loading {
+    width: 100%;
+    background-image: url(/site/assets/images/loading.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 300px;
+}
