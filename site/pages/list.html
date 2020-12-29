@@ -1,0 +1,20 @@
+---
+layout: page
+title: 随笔
+description: 文章列表
+permalink: /list/
+nav: list
+---
+
+
+<div class="home">
+    <ul class="m-list">
+    {% for post in site.posts %}
+    <li class="list-item">        
+        <a href="{{ post.url }}">
+            <p class="post-title">{{ post.title }}</p><span class="post-date">{{ post.date|date:"%Y/%m/%d" }}</span>
+        </a>
+    </li>
+    {% endfor %}
+    </ul>
+</div>

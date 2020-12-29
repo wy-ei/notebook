@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="author" content="wangyu" />
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+    {% else %}
+    <meta name="description" content="{{ page.content | strip_html |remove:'\n'|trim|truncate:80,'' }}">
+    {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    {% assign timestamp = site.time | date:"%m%d%H%M" %}
+    <link rel="stylesheet" href="{{site.base_path}}/assets/css/style.css?v={{timestamp}}" type="text/css" />
+    <link rel="shortcut icon" href="{{site.base_path}}/assets/images/favicon.ico" type="image/x-icon">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="theme-color" content="#f3f3f3">
+    {% include init.html %}
+</head>
+
+<body>
+    <header class="m-header">
+        <div class="wrap">
+            <div class="site-title">
+                <h1 class="site-name">{{ site.title }}</h1>
+                <p class="site-slogan">{{ site.slogan }}</p>
+            </div>
+            <nav class="site-nav">
+                <ul>
+                    <li><a {% if page.nav=='home' %}class="active" {% endif %} href="{{site.home_path}}"><i class="iconfont icon-home"></i>首页</a></li>
+                    <!-- <li><a {% if page.nav == 'list' %}class="active"{% endif %} href="{{ site.list_path }}"><i class="iconfont icon-blog"></i>随笔</a></li> -->
+                    <li><a {% if page.nav=='category' %}class="active" {% endif %} href="{{site.categories_path}}"><i class="iconfont icon-folder"></i>分类</a></li>
+                    <li><a {% if page.nav=='about' %}class="active" {% endif %} href="{{site.about_path}}"><i class="iconfont icon-plane"></i>关于</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="m-main">
+        <div class="wrap">
+            <div class="message-box"></div>
+            {{ content }}
+        </div>
+    </section>
+    {% include footer.html %}
+    <script src="{{site.base_path}}/assets/js/app.js?v={{timestamp}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+---
+layout: post
+notebook: true
+---
+
+<div id="app"></div>
+{% if page.file %}
+<script>
+    var __notebook__ = {% include_relative {{page.file}} %}
+</script>
+{% else %}
+<div>一定要提供 file 参数</div>
+{% endif %}
+
+<script src="https://cdn.jsdelivr.net/npm/marked@1.2.2/lib/marked.min.js"></script>
+<script src="{{site.base_path}}/assets/js/lib/notebook.min.js"></script>
+
+<script>
+    window.WY.run(function() {
+        var app = document.getElementById("app");
+        this.render_notebook(__notebook__, app);
+    });
+</script>

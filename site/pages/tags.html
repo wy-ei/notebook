@@ -1,0 +1,33 @@
+---
+layout: page
+title: 标签
+description: 文章标签
+permalink: /tags/
+---
+
+
+
+
+<div class="tag-list">
+  {% for tag in site.tags reversed %}
+  <a href="#{{ tag[0] }}">{{ tag[0] }}</a>
+  {% endfor %}
+</div>
+
+
+<div class="category-list">
+  {% for tag in site.tags reversed %}
+<div class="">
+    <h3 id="{{ tag | first }}" class="m-list__title"><i class="icon iconfont icon-folder"></i>{{ tag | first }}</h3>
+    <ul class="m-list">
+    {% for post in tag.last %}
+      <li class="list-item">
+        <a href="{{ post.url }}">
+          <p class="post-title">{{ post.title }}</p><span class="post-date">{{ post.date|date:"%Y/%m/%d" }}</span>
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+{% endfor %}
+</ul>

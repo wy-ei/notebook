@@ -1,0 +1,33 @@
+---
+layout: page
+title: 分类
+nav: category
+description: 文章分类
+permalink: /categories/
+---
+
+
+
+<div class="tag-list">
+    {% for category in site.categories %}
+      <a href="#{{ category | first }}">{{ category | first }} ({{ category | last | size }})</a>
+    {% endfor %}
+</div>
+
+
+<div class="category-list">
+{% for category in site.categories reversed %}
+  <div id="{{ category | first }}">
+      <h3  class="m-list__title"><i class="icon iconfont icon-category"></i>{{ category | first }}</h3>
+      <ul class="m-list">
+      {% for post in category.last %}
+        <li class="list-item">
+            <a href="{{ post.url }}">
+              <p class="post-title">{{ post.title }}</p><span class="post-date">{{ post.date|date:"%Y/%m/%d" }}</span>
+            </a>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+{% endfor %}
+</ul>

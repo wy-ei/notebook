@@ -1,0 +1,52 @@
+---
+layout: page
+description: 博客首页
+nav: home
+permalink: /
+---
+
+
+<p style="margin-bottom: 40px;">
+我的编程笔记，记录平时学到的编程知识，便于自己随时查阅。
+</p>
+
+<div class="tag-list">
+    <h3  class="m-list__title"><i class="icon iconfont icon-category"></i>分类</h3>
+    {% for category in site.categories %}
+    {% assign post = category | last | last %}
+        <a href="#{{ category | first }}">{{ category | first }} ({{ category | last | size }})</a>
+    {% endfor %}
+</div>
+    
+    
+<h3  class="m-list__title"><i class="icon iconfont icon-time"></i>最近发布</h3>
+<ul class="m-list">
+{% for i in (0..5) %}
+{% assign post = site.posts[i] %}
+<li class="list-item">
+    <a href="{{ post.url }}">
+        <p class="post-title">{{ post.title }}</p><span class="post-date">{{ post.date|date:"%Y/%m/%d" }}</span>
+    </a>
+</li>
+{% endfor %}
+</ul>
+
+
+<div class="category-list">
+{% for category in site.categories reversed %}
+{% assign post = category | last | last %}
+
+<div id="{{ category | first }}">
+    <h3  class="m-list__title"><i class="icon iconfont icon-category"></i>{{ category | first }}</h3>
+    <ul class="m-list">
+    {% for post in category.last %}
+    <li class="list-item">
+        <a href="{{ post.url }}">
+            <p class="post-title">{{ post.title }}</p><span class="post-date">{{ post.date|date:"%Y/%m/%d" }}</span>
+        </a>
+    </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endfor %}
+</ul>

@@ -1,0 +1,42 @@
+encoding: utf-8
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    disable: true
+  toc_levels: 2..3
+
+permalink: /:year/:slug/
+
+layouts_dir: site/_layouts
+includes_dir: site/_includes
+
+future: true
+
+sass:
+  sass_dir: /assets/css/scss
+  style: compressed
+
+
+title: WangYu's Notebook
+slogan: 好记性不如烂笔头
+
+images: https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/
+
+base_path: "/notebook"
+home_path: "/notebook/"
+categories_path: /notebook/categories/
+list_path: /notebook/list/
+tags_path: /notebook/tags/
+about_path: /notebook/about/
+
+base_url: "http://wy-ei.github.io/notebook/"
+rss_path: /rss.xml
+atom_path: /atom.xml
+excerpt_separator: "<!--more-->"
+author :
+  name : wy-ei
+  email : wangyu_it@yeah.net
+  github : wy-ei
+

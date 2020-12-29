@@ -1,0 +1,17 @@
+<script>
+window.WY = {
+    url_map: {},
+    queue: [],
+    run: function(func){
+        this.queue.push(func);
+    },
+    message: function(text){
+        let box = document.querySelector('.message-box');
+        box.innerHTML = text;
+    }
+};
+
+{%if page.math %}
+window.__math__ = true;
+{% endif %}
+</script>
