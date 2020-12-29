@@ -31,9 +31,9 @@ list_path: /notebook/list/
 tags_path: /notebook/tags/
 about_path: /notebook/about/
 
-assets_path: /notebook/assets
+assets_path: /notebook/site/assets
 
-base_url: "http://wy-ei.github.io/notebook/"
+base_url: "https://wy-ei.github.io/notebook/"
 excerpt_separator: "<!--more-->"
 author :
   name : wy-ei

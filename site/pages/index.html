@@ -24,7 +24,7 @@ permalink: /
 {% for i in (0..5) %}
 {% assign post = site.posts[i] %}
 <li class="list-item">
-    <a href="{{ post.url }}">
+    <a href="{{site.base_path}}{{ post.url }}">
         <p class="post-title">{{ post.title }}</p><span class="post-date">{{ post.date|date:"%Y/%m/%d" }}</span>
     </a>
 </li>
@@ -41,7 +41,7 @@ permalink: /
     <ul class="m-list">
     {% for post in category.last %}
     <li class="list-item">
-        <a href="{{ post.url }}">
+        <a href="{{site.base_path}}{{ post.url }}">
             <p class="post-title">{{ post.title }}</p><span class="post-date">{{ post.date|date:"%Y/%m/%d" }}</span>
         </a>
     </li>
