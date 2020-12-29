@@ -7,7 +7,7 @@ requestAnimationFrame = requestAnimationFrame || webkitRequestAnimationFrame || 
 var lib = {
     mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js',
     highlight: 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js',
-    prism: '/assets/js/lib/prism.js'
+    prism: '/notebook/site/assets/js/lib/prism.js'
 };
 
 var MathJaxLoaded = false;
