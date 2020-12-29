@@ -1,1 +1,0 @@
-C++ 面试问题： https://github.com/huihut/interview#effective

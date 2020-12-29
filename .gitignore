@@ -1,9 +1,0 @@
-_site/*
-*.out
-.idea
-.vscode
-.sass-cache/
-/images
-**/.ipynb_checkpoints/*
-.DS_Store
-.jekyll-cache/
