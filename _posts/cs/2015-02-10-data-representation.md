@@ -4,7 +4,70 @@ title: 计算机中数值的表示
 category: 理解计算机
 ---
 
+
+## 首次使用
+
+
+1. 远程登录到实验室某台不关机的服务器上。
+
+ssh xxx@ip
+
+
+2. 使用 screen 新建会话
+
+screen -S zhy
+
+此时应该会新建一个 shell 页面
+
+
+3. 连接 GPU 服务器
+
+ssh xxx@192.168.5.201
+
+4. 申请 GPU
+
+srun --gres=gpu:1 -n1 --pty
+
+5. 后台运行脚本
+
+python x.py &
+
+6. 直接关闭终端软件
+
+点右上角 x
+
+
+## 查看运行情况
+
+1. 登录
+
+ssh xxx@ip
+
+2. 进入 screen 会话
+
+运行如下命令
+
+screen -ls
+
+结果大致如下（下面是我运行时候的结果）：
+
+wangyu@bd28:~$ screen -ls
+There are screens on:
+       16255.wy        (04/28/2020 09:58:03 PM)        (Attached)
+        15989.pts-27.bd28       (04/28/2020 09:56:33 PM)        (Attached)
+
+
+3. 进入会话（这里 zhy 是前面使用 screen -S 新建会话时候制定的名字，可以随意）
+
+screen -x zhy
+
+此时你应该可以可以继续在 GPU 服务器上操作了。
+
+
 谈谈数值在计算机中的表示。但跳过进制之间的转换。由于水平有限错误在所难免，如有发现恳请指出。
+
+
+
 
 
 ## 1 原码，反码，补码

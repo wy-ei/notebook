@@ -3,4 +3,7 @@ _site/*
 .idea
 .vscode
 .sass-cache/
-/src/
+/images
+**/.ipynb_checkpoints/*
+.DS_Store
+.jekyll-cache/

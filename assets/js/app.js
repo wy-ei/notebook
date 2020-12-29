@@ -45,6 +45,7 @@ APP.prototype.init = function(){
             _this.setImage();
             _this.renderMath();
         }    
+        _this.highlight();
         _this.addEventListener();
     });
 }
@@ -90,25 +91,32 @@ APP.prototype.setImage = function () {
     for (var i = 0, len = imgs.length; i < len; i++) {
         var img = imgs[i];
         var alt = img.getAttribute('alt') || '';
-        if(alt){
-            
-            var params = getParam(alt);
-            params.forEach(function(param){
-                var key = param[0];
-                if(key in KEY_MAP){
-                    key = KEY_MAP[key];
-                }
-                img.style[key] = param[1];
-            });
+        if(!alt){
+            continue;
+        }
+        
+        var params = getParam(alt);
+        img.removeAttribute('alt');
+        params.forEach(function(param){
+            var key = param[0];
+            var value = param[1];
+            if(key in KEY_MAP){
+                key = KEY_MAP[key];
+            }
 
-            alt = alt.replace(/<.+?>/g, '')
-            if(alt){
+            if(key == 'text'){
                 var div = document.createElement('div');
                 div.setAttribute('class', 'img-alt');
-                div.innerHTML = '<p>' + alt + '</p>';
+                div.innerHTML = '<p>' + value + '</p>';
                 img.parentElement.appendChild(div);
             }
-        }
+            else if(key == 'class'){
+                img.classList.add(value);
+            }
+            else{
+                img.style[key] = value;
+            }
+        });
     }
 
     function getParam(s){
@@ -190,6 +198,11 @@ APP.prototype.load_from_github_issues = function(repo, issue_id, dom_id){
     });
 }
 
+APP.prototype.highlight = function(){  
+    document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+    });
+};
 
 APP.prototype.render_notebook = function (ipynb, container) {
     var notebook = nb.parse(ipynb);
@@ -209,8 +222,8 @@ APP.prototype.render_notebook = function (ipynb, container) {
     }
 
     container.appendChild(elem);
-    Prism.highlightAll();
     this.renderMath();
+    this.highlight();
     this.buildTOC();
     this.setImage();
 

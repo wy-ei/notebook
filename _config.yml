@@ -1,23 +1,27 @@
-layouts_dir: docs/_layouts
-includes_dir: docs/_includes
-
 encoding: utf-8
 markdown: kramdown
+highlighter: rouge
 kramdown:
+  syntax_highlighter_opts:
+    disable: true
   input: GFM
-  syntax_highlighter: rouge
+  
   toc_levels: 2..3
 
 permalink: /posts/:year/:slug/
 
+sass:
+  sass_dir: /assets/scss
+  style: compressed
 
 title: WangYu's Notes
 slogan: 好记性，不如烂笔头。
 
 images: https://wangyu-name.oss-cn-hangzhou.aliyuncs.com/
 
-base_path: ""
-source_url: "https://wangyu.name"
+base_path: "/notebook"
+# base_path: ""
+# port: 8002
 
 url: https://notes.wangyu.name/
 
@@ -28,3 +32,11 @@ author :
   name : wy-ei
   email : wangyu_it@yeah.net
   github : wy-ei
+  
+  
+defaults:
+  - scope:
+      path: "_posts/draft"
+    values:
+      layout: "post"
+      published: false
